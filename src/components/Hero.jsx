@@ -23,7 +23,6 @@ export default function Hero() {
               lved: The Best Car
             </span>{" "}
             <Image
-              ref={heroImg1}
               src={"/assets/flash-wave.png"}
               alt=""
               height={512}
@@ -51,7 +50,7 @@ export default function Hero() {
                 loop
                 className="h-20 w-60 rounded-full object-cover pointer-events-none"
               >
-                your device doesn't support videos
+                your device doesn&apos;t support videos
               </video>
             </div>
           </div>
@@ -65,8 +64,8 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="w-full mt-4">
-        <div className="px-20">
+      <div className="w-full mt-16">
+        <div className="px-20 relative">
           <video
             src="/assets/video2.mp4"
             autoPlay
@@ -74,8 +73,12 @@ export default function Hero() {
             loop
             className="h-96 w-full rounded-[30px] object-cover"
           >
-            your device doesn't support videos
+            your device doesn&apos;t support videos
           </video>
+
+          <div className="absolute -top-10 right-32 border-[5px] border-white h-32 w-32 bg-red-600 rounded-full flex justify-center items-center">
+            <div className="text-white text-xl">M</div>
+          </div>
         </div>
       </div>
     </section>
