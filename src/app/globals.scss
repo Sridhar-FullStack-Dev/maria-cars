@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 ::selection {
-  background: #DC2727;
+  background: #dc2727;
   color: white;
 }
 
 body {
   cursor: default;
+
 }
 
 ::-webkit-scrollbar {
-  background-color: white;
-  width: 5px;
+  display: none;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: red;
-  border-radius: 100px;
+@font-face {
+  font-family: Mercado;
+  src: url("../fonts/ExtendedFont.ttf");
+}
 
-  &:hover{
-    background-color: #DC2727;
-  }
+.hero-font {
+  font-family: "Mercado";
 }

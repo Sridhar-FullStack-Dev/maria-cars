@@ -1,125 +1,101 @@
 "use client";
 import Link from "next/link";
-import { Inter, Poppins } from "next/font/google";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useLenis } from "@studio-freight/react-lenis";
 
 // Icons
-import { CiLock } from "react-icons/ci";
-import { FaPlus } from "react-icons/fa";
-import { IoIosSearch } from "react-icons/io";
-import { LuPlayCircle } from "react-icons/lu";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { IoShieldHalfSharp } from "react-icons/io5";
-import { PiChatsCircleLight } from "react-icons/pi";
-import { MdOutlineCollections } from "react-icons/md";
-import { MdOutlineSpaceDashboard } from "react-icons/md";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
+import { FaTimes } from "react-icons/fa";
+import { IoIosCall } from "react-icons/io";
+import { BiSolidOffer } from "react-icons/bi";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isClicked, setIsClicked] = useState(null);
+  const [isHovered, setIsHovered] = useState(null);
+  const [isNewsToggle, setIsNewsToggle] = useState(true);
+
+  // Lenis
+  const lenis = useLenis();
 
   return (
-    <nav className={`${inter.className} bg-white bg-opacity-5 backdrop-blur-sm sticky top-0 z-[99] w-full`}>
-      {/* Topbar */}
-      <div className="flex justify-between items-center border border-gray-200 py-2 px-8 w-full">
-        <div className="flex justify-start items-center gap-6 text-xl text-gray-200 w-1/3">
-          <div className="flex gap-2">
-            <div className="h-3 w-3 bg-gray-200 rounded-full"></div>
-            <div className="h-3 w-3 bg-gray-200 rounded-full"></div>
-            <div className="h-3 w-3 bg-gray-200 rounded-full"></div>
+    <nav className="sticky top-0 z-[99] shadow-sm">
+      {isNewsToggle && (
+        <div className="h-9 w-full bg-white flex justify-center items-center gap-4 text-[12px] relative border border-red-600">
+          <div className="h-5 px-4 py-3 flex justify-center items-center gap-1 bg-red-600 text-white rounded-full">
+            New Offers <BiSolidOffer className="text-xl text-white" />
           </div>
 
-          <div>
-            <MdOutlineSpaceDashboard />
-          </div>
-
-          <div className="flex items-center gap-3 text-sm">
-            <FaChevronLeft />
-            <FaChevronRight />
-          </div>
-        </div>
-
-        <div className="flex justify-center items-center gap-4 text-gray-200 w-1/3">
-          <div className="text-lg">
-            <IoShieldHalfSharp />
-          </div>
-
-          <div className="text-sm">
-            <div className="bg-gray-100 text-gray-400 rounded-lg w-72 py-2 px-4 flex justify-between items-center">
-              <div>
-                <CiLock />
-              </div>
-              <div className="text-[12px]">https://maria-car.com</div>
-              <div>
-                <IoIosSearch />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-gray-300 flex justify-end items-center gap-4 w-1/3">
-          <div>
-            <FaPlus />
-          </div>
-          <div>
-            <MdOutlineCollections />
-          </div>
-        </div>
-      </div>
-
-      <div
-        className={`${poppins.className} px-8 py-4 flex justify-between items-center`}
-      >
-        <div>Logo</div>
-
-        <div className="flex justify-center items-center gap-5">
-          <AnimatePresence>
-            {navMenu.map((menu, menuKey) => {
-              const isActive = pathname === menu.href;
-              return (
-                <div
-                  key={menuKey}
-                  className="text-sm tracking-wide rounded-full flex justify-center items-center"
-                >
-                  <Link
-                    href={menu.href}
-                    class="overflow-hidden flex justify-center items-center w-32 py-4 px-12 h-12 bg-white text-black hover:text-white border border-red-600 rounded-full font-bold cursor-pointer relative z-10 group"
-                  >
-                    {menu.name}
-                    <span class="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"></span>
-                    <span class="absolute w-36 h-32 -top-8 -left-2 bg-red-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
-                    <span class="absolute w-36 h-32 -top-8 -left-2 bg-red-600 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-1000 duration-500 origin-left"></span>
-                    <span class="group-hover:opacity-100 group-hover:duration-1000 duration-100 opacity-0 absolute top-2.5 left-6 z-10">
-                      {menu.name}
-                    </span>
-                  </Link>
-                </div>
-              );
-            })}
-          </AnimatePresence>
-
-          <div className="py-4 px-12 border border-red-400 text-black text-sm tracking-wide rounded-full flex justify-center items-center">
-            <Link
-              href={"/"}
-              className="font-bold flex justify-center items-center gap-4"
-            >
-              <div className="whitespace-nowrap">Watch Demo</div>
-              <LuPlayCircle className="text-xl text-red-600" />
+          <div className="text-red-600">
+            Exciting offers awaits only for you{" "}
+            <Link href={"tel:+919443041599"} className="underline">
+              Contact Now.
             </Link>
           </div>
+
+          <div
+            onClick={() => setIsNewsToggle(!isNewsToggle)}
+            className="absolute top-3 right-5 text-red-600"
+          >
+            <FaTimes />
+          </div>
+        </div>
+      )}
+
+      {/* Navbar */}
+      <div className="flex justify-between items-center py-1 px-8 bg-white text-sm">
+        <div>Maria Cars</div>
+
+        <div className="flex justify-center items-center">
+          <div className="flex items-center justify-between gap-4">
+            {navMenu.map((menu, menuKey) => (
+              <Link
+                key={menuKey}
+                href={menu.href}
+                onClick={() => {
+                  lenis.scrollTo(`${menu.href}`, { lerp: 0.02 });
+                  setIsClicked(menuKey);
+                }}
+                onMouseEnter={() => setIsHovered(menuKey)}
+                onMouseLeave={() => setIsHovered(null)}
+                className="hover:text-red-600 transition-all duration-200 ease-linear"
+              >
+                {menu.name}
+
+                {isHovered === menuKey ? (
+                  isClicked === menuKey ? null : (
+                    <motion.div
+                      initial={{ x: "10px", opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ ease: "linear" }}
+                      className="px-1"
+                    >
+                      <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
+                    </motion.div>
+                  )
+                ) : null}
+
+                {isClicked === menuKey && (
+                  <motion.div
+                    initial={{ x: "10px", opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ ease: "linear" }}
+                    className="px-1"
+                  >
+                    <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
+                  </motion.div>
+                )}
+              </Link>
+            ))}
+          </div>
         </div>
 
-        <div className="flex justify-center items-center gap-4">
-          <div className="p-4 rounded-full bg-red-600 text-white text-xl">
-            <PiChatsCircleLight />
-          </div>
-          <div className="p-4 rounded-full bg-red-600 text-white text-xl">
-            <RxHamburgerMenu />
-          </div>
+        <div>
+          <Link href={"tel:+919443041599"} className="bg-red-600 h-10 w-full py-1 px-3 flex items-center justify-center gap-2 text-white text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150">
+            <IoIosCall />
+            Call now
+          </Link>
         </div>
       </div>
     </nav>
@@ -128,21 +104,19 @@ export default function Navbar() {
 
 const navMenu = [
   {
-    href: "/",
+    href: "#home",
     name: "Home",
-    icon: "",
   },
   {
-    href: "/about",
+    href: "#about",
     name: "About",
-    icon: "",
   },
   {
-    href: "/services",
+    href: "#services",
     name: "Services",
   },
   {
-    href: "/contacts",
+    href: "#contacts",
     name: "Contacts",
   },
 ];
