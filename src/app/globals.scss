@@ -7,20 +7,25 @@
   color: white;
 }
 
-body {
-  cursor: default;
-
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
 
+body {
+  cursor: default;
+}
+
 @font-face {
-  font-family: Mercado;
+  font-family: ExtendedFont;
   src: url("../fonts/ExtendedFont.ttf");
 }
 
 .hero-font {
-  font-family: "Mercado";
+  font-family: "ExtendedFont";
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  background: #FFF;
 }

@@ -5,10 +5,12 @@ import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <About />
-      <Services />
-    </main>
+    <>
+      <main>
+        <Hero />
+        <About />
+        <Services />
+      </main>
+    </>
   );
 }

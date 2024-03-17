@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 // Icons
-import { FaMapLocationDot } from "react-icons/fa6";
 
 export default function Hero() {
   return (
