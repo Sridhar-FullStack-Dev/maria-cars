@@ -15,8 +15,11 @@ export default function Services() {
           <p className="text-base">We provide all types of fitting services for your car</p>
         </div>
         
-        <div className="w-2/3">Aron is Noob</div>
+        <div className="w-2/3"> Aron is Noob</div>
       </div>
     </motion.section>
   );
 }
+
+
+
