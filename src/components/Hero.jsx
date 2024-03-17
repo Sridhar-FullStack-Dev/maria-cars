@@ -29,7 +29,7 @@ export default function Hero() {
           autoPlay
           muted
           loop
-          className="h-96 w-full object-cover rounded-[30px] pointer-events-none"
+          className="h-96 w-full object-cover rounded-t-[30px] pointer-events-none"
         >
           video advertisement
         </video>
