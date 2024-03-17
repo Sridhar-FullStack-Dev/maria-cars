@@ -14,8 +14,8 @@ export default function Services() {
           <h1 className="hero-font text-2xl">Services</h1>
           <p className="text-base">We provide all types of fitting services for your car</p>
         </div>
-        
-        <div className="w-2/3"> Aron is Noob</div>
+
+        <div className="w-2/3">Aron is smarter and intelligent</div>
       </div>
     </motion.section>
   );
