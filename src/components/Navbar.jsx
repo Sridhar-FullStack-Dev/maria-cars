@@ -44,7 +44,7 @@ export default function Navbar() {
       )}
 
       {/* Navbar */}
-      <div className="flex justify-between items-center py-1 px-8 bg-white text-sm">
+      <div className="flex justify-between items-center py-2 px-8 bg-white text-sm">
         <div>Maria Cars</div>
 
         <div className="flex justify-center items-center">
@@ -92,7 +92,7 @@ export default function Navbar() {
         </div>
 
         <div>
-          <Link href={"tel:+919443041599"} className="bg-red-600 h-10 w-full py-1 px-3 flex items-center justify-center gap-2 text-white text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150">
+          <Link href={"tel:+919443041599"} className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150">
             <IoIosCall />
             Call now
           </Link>
@@ -114,6 +114,10 @@ const navMenu = [
   {
     href: "#services",
     name: "Services",
+  },
+  {
+    href: "#featured-products",
+    name: "Featured Products",
   },
   {
     href: "#contacts",
