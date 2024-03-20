@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { useLenis } from "@studio-freight/react-lenis";
 
 // Icons
@@ -62,16 +63,26 @@ export default function Navbar() {
 
                 {isHovered === menuKey ? (
                   isClicked === menuKey ? null : (
-                    <div className="px-1">
+                    <motion.div
+                      initial={{ x: "10px", opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ ease: "linear" }}
+                      className="px-1"
+                    >
                       <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
-                    </div>
+                    </motion.div>
                   )
                 ) : null}
 
                 {isClicked === menuKey && (
-                  <div className="px-1">
+                  <motion.div
+                    initial={{ x: "10px", opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ ease: "linear" }}
+                    className="px-1"
+                  >
                     <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
-                  </div>
+                  </motion.div>
                 )}
               </Link>
             ))}
@@ -79,10 +90,7 @@ export default function Navbar() {
         </div>
 
         <div>
-          <Link
-            href={"tel:+919443041599"}
-            className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150"
-          >
+          <Link href={"tel:+919443041599"} className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150">
             <IoIosCall />
             Call now
           </Link>
