@@ -17,7 +17,7 @@ export const metadata = {
     url: "https://maria-cars.vercel.app",
     title: "Maria Cars | Home - Best Car Fitting Services In Thoothukudi",
     description:
-    "Maria Cars provides high-quality car fitting services. We are a reliable auto modification and fitting shop offering affordable plans and offers. Visit us for the best car fitting near you and our company is situated in Thoothukudi.",
+      "Maria Cars provides high-quality car fitting services. We are a reliable auto modification and fitting shop offering affordable plans and offers. Visit us for the best car fitting near you and our company is situated in Thoothukudi.",
     images: [
       {
         url: "https://maria-cars.vercel.app/favicon.ico",

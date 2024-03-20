@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="bg-red-600 px-4 py-16 overflow-hidden hero-font"
+      className="bg-red-600 px-4 py-16 rounded-b-3xl overflow-hidden hero-font"
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -17,7 +17,7 @@ export default function Hero() {
             The Best <span className="font-bold">Car Fitting</span>
           </div>
           <div className="flex items-center justify-center gap-4 mt-4">
-            Company In <span className="font-bold">Thoothukudi.</span>
+            Company In <span className="font-bold">Thoothukudi</span>
           </div>
         </div>
       </motion.div>
@@ -28,7 +28,7 @@ export default function Hero() {
           autoPlay
           muted
           loop
-          className="h-96 w-full object-cover rounded-t-[30px] pointer-events-none"
+          className="h-[26rem] w-full object-cover rounded-t-[30px] pointer-events-none"
         >
           video advertisement
         </video>

@@ -37,7 +37,7 @@ export default function SwiperJS() {
             spaceBetween: 10,
           },
         }}
-        className="mySwiper"
+        className="mySwiper rounded-xl"
       >
         {servicerSwiper.map((service, serviceKey) => (
           <SwiperSlide key={serviceKey}>
@@ -47,10 +47,10 @@ export default function SwiperJS() {
                 alt={service.name}
                 height={1000}
                 width={1000}
-                className="h-44 w-44 pointer-events-none object-cover rounded-lg"
+                className="h-52 w-52 pointer-events-none object-cover rounded-lg"
               />
 
-              <p className="text-center">{service.name}</p>
+              <p className="text-center text-sm">{service.name}</p>
             </div>
           </SwiperSlide>
         ))}
@@ -63,31 +63,36 @@ const servicerSwiper = [
   {
     name: "Alloy wheels",
     image:
-      "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/5623498/pexels-photo-5623498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Entertainments",
+    name: "Entertainments With Top Notch Bass",
     image:
-      "https://images.pexels.com/photos/17071529/pexels-photo-17071529/free-photo-of-sport-cars-on-a-parking-lot.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/373632/pexels-photo-373632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Alloy wheels",
-    image:
-      "https://images.pexels.com/photos/17918285/pexels-photo-17918285/free-photo-of-red-tuned-bmw-e30.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  },
-  {
-    name: "Alloy wheels",
-    image:
-      "https://images.pexels.com/photos/17304858/pexels-photo-17304858/free-photo-of-red-chevrolet-corvette.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  },
-  {
-    name: "Alloy wheels",
+    name: "Jeep Fittings",
     image:
       "https://images.pexels.com/photos/1638459/pexels-photo-1638459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Luxury seats",
+    name: "Retro Cars Fitting",
     image:
-      "https://images.pexels.com/photos/366224/pexels-photo-366224.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.pexels.com/photos/19310209/pexels-photo-19310209/free-photo-of-headlights-and-grill-of-vintage-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    name: "Luxury Interiors Fitting",
+    image:
+      "https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    name: "Customizable RGB Lights",
+    image:
+      "https://images.pexels.com/photos/2127022/pexels-photo-2127022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    name: "Varities Of Imported Horns",
+    image:
+      "https://images.pexels.com/photos/137600/pexels-photo-137600.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];

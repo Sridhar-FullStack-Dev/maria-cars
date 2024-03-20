@@ -22,7 +22,7 @@ export default function Services() {
           if (entry.isIntersecting) {
             const element = ref1.current;
             const count = { val: 0 };
-  
+
             gsap.to(count, {
               val: 25,
               duration: 2.5,
@@ -37,11 +37,11 @@ export default function Services() {
           }
         });
       },
-      { once: true } // Add the once option
+      { once: true }
     );
-  
+
     observer1.current.observe(ref1.current);
-  
+
     return () => {
       if (observer1.current) observer1.current.disconnect();
     };
@@ -54,9 +54,9 @@ export default function Services() {
           if (entry.isIntersecting) {
             const element = ref2.current;
             const count = { val: 0 };
-  
+
             gsap.to(count, {
-              val: 25,
+              val: 30,
               duration: 2.5,
               delay: 2,
               roundProps: "val",
@@ -71,9 +71,9 @@ export default function Services() {
       },
       { once: true } // Add the once option
     );
-  
+
     observer2.current.observe(ref2.current);
-  
+
     return () => {
       if (observer2.current) observer2.current.disconnect();
     };
@@ -86,7 +86,7 @@ export default function Services() {
           if (entry.isIntersecting) {
             const element = ref3.current;
             const count = { val: 0 };
-  
+
             gsap.to(count, {
               val: 25,
               duration: 2.5,
@@ -103,9 +103,9 @@ export default function Services() {
       },
       { once: true } // Add the once option
     );
-  
+
     observer3.current.observe(ref3.current);
-  
+
     return () => {
       if (observer3.current) observer3.current.disconnect();
     };
@@ -118,9 +118,9 @@ export default function Services() {
           if (entry.isIntersecting) {
             const element = ref4.current;
             const count = { val: 0 };
-  
+
             gsap.to(count, {
-              val: 25,
+              val: 1000,
               duration: 2.5,
               delay: 2,
               roundProps: "val",
@@ -135,14 +135,13 @@ export default function Services() {
       },
       { once: true } // Add the once option
     );
-  
+
     observer4.current.observe(ref4.current);
-  
+
     return () => {
       if (observer4.current) observer4.current.disconnect();
     };
   }, []);
-
 
   return (
     <motion.section
@@ -193,23 +192,31 @@ export default function Services() {
       <div className="mt-8 p-8 w-full bg-white text-red-600 flex justify-between items-center rounded-2xl">
         <div className="flex items-center justify-evenly w-full gap-4 hero-font text-6xl">
           <div className="w-60 overflow-hidden">
-            <div ref={ref1}>0 +</div>
-            <div className="text-sm py-4">Cars Services / Day</div>
+            <div ref={ref1} className="text-center">0 +</div>
+            <p className="text-sm w-full text-center py-4">
+              Cars Services / Day
+            </p>
           </div>
 
           <div className="w-60 overflow-hidden">
-            <div ref={ref2}>0 +</div>
-            <div className="text-sm py-4">Cars Washes / Day</div>
+            <div ref={ref2} className="text-center">0 +</div>
+            <p className="text-sm w-full text-center py-4">
+              Cars Washes / Day
+            </p>
           </div>
 
           <div className="w-60 overflow-hidden">
-            <div ref={ref3}>0 +</div>
-            <div className="text-sm py-4">Years Of Service</div>
+            <div ref={ref3} className="text-center">0 +</div>
+            <p className="text-sm w-full text-center py-4">
+              Years Of Service
+            </p>
           </div>
 
-          <div className="w-60 overflow-hidden">
-            <div ref={ref4}>0 +</div>
-            <div className="text-sm py-4">Years Of Service</div>
+          <div className="w-fit overflow-hidden">
+            <div ref={ref4} className="text-center">0 +</div>
+            <p className="text-sm w-full text-center py-4">
+              Cars Serviced / Month
+            </p>
           </div>
         </div>
 
