@@ -1,13 +1,133 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import SwiperJS from "./Mini Components/SwiperJS";
 
 export default function Services() {
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const observer = useRef(null);
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = ref1.current;
+          const count = { val: 0 };
+
+          gsap.to(count, {
+            val: 50,
+            duration: 2.5,
+            delay: 2,
+            roundProps: "val",
+            onUpdate: () => {
+              element.textContent = `${count.val} +`;
+            },
+            ease: "power1.inOut",
+          });
+        }
+      });
+    });
+
+    observer.current.observe(ref1.current);
+
+    return () => {
+      if (observer.current) observer.current.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = ref2.current;
+          const count = { val: 0 };
+
+          gsap.to(count, {
+            val: 30,
+            duration: 2.5,
+            delay: 2,
+            roundProps: "val",
+            onUpdate: () => {
+              element.textContent = `${count.val} +`;
+            },
+            ease: "power1.inOut",
+          });
+        }
+      });
+    });
+
+    observer.current.observe(ref2.current);
+
+    return () => {
+      if (observer.current) observer.current.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = ref3.current;
+          const count = { val: 0 };
+
+          gsap.to(count, {
+            val: 10,
+            duration: 2.5,
+            delay: 2,
+            roundProps: "val",
+            onUpdate: () => {
+              element.textContent = `${count.val} +`;
+            },
+            ease: "power1.inOut",
+          });
+        }
+      });
+    });
+
+    observer.current.observe(ref3.current);
+
+    return () => {
+      if (observer.current) observer.current.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = ref4.current;
+          const count = { val: 0 };
+
+          gsap.to(count, {
+            val: 25,
+            duration: 2.5,
+            delay: 2,
+            roundProps: "val",
+            onUpdate: () => {
+              element.textContent = `${count.val} +`;
+            },
+            ease: "power1.inOut",
+          });
+        }
+      });
+    });
+
+    observer.current.observe(ref4.current);
+
+    return () => {
+      if (observer.current) observer.current.disconnect();
+    };
+  }, []);
+
   return (
     <motion.section
       initial={{ background: "#FFF", color: "#FFF" }}
       whileInView={{ background: "#DC2C2C", color: "#FFF" }}
       transition={{ ease: "linear", duration: 2 }}
-      id="about"
+      id="services"
       className="px-8 py-16 rounded-t-3xl overflow-hidden"
     >
       <div className="flex justify-between items-start gap-8">
@@ -36,11 +156,10 @@ export default function Services() {
             className="mt-8 w-96 text-sm text-justify"
           >
             We provide all types of fitting services for your car in a world
-            class standards and we install stunning aesthetic elements&rsquo;
-            high-quality speakers&rsquo; luxurious seats&rsquo; powerful
-            woofers&rsquo; and premium imported horns to ensure your car
-            isn&apos;t just a mode of transport&rsquo; but a statement of style
-            and comfort.
+            class standards and we install stunning aesthetic elements,
+            high-quality speakers, luxurious seats, powerful woofers, and
+            premium imported horns to ensure your car isn&apos;t just a mode of
+            transport, but a statement of style and comfort.
           </motion.p>
         </div>
 
@@ -50,10 +169,26 @@ export default function Services() {
       </div>
 
       <div className="mt-8 p-8 w-full bg-white text-red-600 flex justify-between items-center rounded-2xl">
-        <div className="flex items-center justify-between">
-          <div>50+</div>
-          <div>20+</div>
-          <div>30+</div>
+        <div className="flex items-center justify-evenly w-full gap-4 hero-font text-6xl">
+          <div className="w-60 overflow-hidden">
+            <div ref={ref1}>0 +</div>
+            <div className="text-sm py-4">Cars Services / Day</div>
+          </div>
+
+          <div className="w-60 overflow-hidden">
+            <div ref={ref2}>0 +</div>
+            <div className="text-sm py-4">Cars Washes / Day</div>
+          </div>
+
+          <div className="w-60 overflow-hidden">
+            <div ref={ref3}>0 +</div>
+            <div className="text-sm py-4">Years Of Service</div>
+          </div>
+
+          <div className="w-60 overflow-hidden">
+            <div ref={ref4}>0 +</div>
+            <div className="text-sm py-4">Years Of Service</div>
+          </div>
         </div>
 
         <div></div>
