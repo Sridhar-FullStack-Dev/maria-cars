@@ -16,116 +16,133 @@ export default function Services() {
   const observer4 = useRef(null);
 
   useEffect(() => {
-    observer1.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const element = ref1.current;
-          const count = { val: 0 };
-
-          gsap.to(count, {
-            val: 50,
-            duration: 2.5,
-            delay: 2,
-            roundProps: "val",
-            onUpdate: () => {
-              element.textContent = `${count.val} +`;
-            },
-            ease: "power1.inOut",
-          });
-        }
-      });
-    });
-
+    observer1.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = ref1.current;
+            const count = { val: 0 };
+  
+            gsap.to(count, {
+              val: 25,
+              duration: 2.5,
+              delay: 2,
+              roundProps: "val",
+              onUpdate: () => {
+                element.textContent = `${count.val} +`;
+              },
+              ease: "power1.inOut",
+            });
+            observer1.current.disconnect(); // Disconnect the observer after animation
+          }
+        });
+      },
+      { once: true } // Add the once option
+    );
+  
     observer1.current.observe(ref1.current);
-
+  
     return () => {
       if (observer1.current) observer1.current.disconnect();
     };
   }, []);
 
   useEffect(() => {
-    observer2.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const element = ref2.current;
-          const count = { val: 0 };
-
-          gsap.to(count, {
-            val: 30,
-            duration: 2.5,
-            delay: 2,
-            roundProps: "val",
-            onUpdate: () => {
-              element.textContent = `${count.val} +`;
-            },
-            ease: "power1.inOut",
-          });
-        }
-      });
-    });
-
+    observer2.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = ref2.current;
+            const count = { val: 0 };
+  
+            gsap.to(count, {
+              val: 25,
+              duration: 2.5,
+              delay: 2,
+              roundProps: "val",
+              onUpdate: () => {
+                element.textContent = `${count.val} +`;
+              },
+              ease: "power1.inOut",
+            });
+            observer2.current.disconnect(); // Disconnect the observer after animation
+          }
+        });
+      },
+      { once: true } // Add the once option
+    );
+  
     observer2.current.observe(ref2.current);
-
+  
     return () => {
       if (observer2.current) observer2.current.disconnect();
     };
   }, []);
 
   useEffect(() => {
-    observer3.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const element = ref3.current;
-          const count = { val: 0 };
-
-          gsap.to(count, {
-            val: 10,
-            duration: 2.5,
-            delay: 2,
-            roundProps: "val",
-            onUpdate: () => {
-              element.textContent = `${count.val} +`;
-            },
-            ease: "power1.inOut",
-          });
-        }
-      });
-    });
-
+    observer3.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = ref3.current;
+            const count = { val: 0 };
+  
+            gsap.to(count, {
+              val: 25,
+              duration: 2.5,
+              delay: 2,
+              roundProps: "val",
+              onUpdate: () => {
+                element.textContent = `${count.val} +`;
+              },
+              ease: "power1.inOut",
+            });
+            observer3.current.disconnect(); // Disconnect the observer after animation
+          }
+        });
+      },
+      { once: true } // Add the once option
+    );
+  
     observer3.current.observe(ref3.current);
-
+  
     return () => {
       if (observer3.current) observer3.current.disconnect();
     };
   }, []);
 
   useEffect(() => {
-    observer4.current = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const element = ref4.current;
-          const count = { val: 0 };
-
-          gsap.to(count, {
-            val: 25,
-            duration: 2.5,
-            delay: 2,
-            roundProps: "val",
-            onUpdate: () => {
-              element.textContent = `${count.val} +`;
-            },
-            ease: "power1.inOut",
-          });
-        }
-      });
-    });
-
+    observer4.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = ref4.current;
+            const count = { val: 0 };
+  
+            gsap.to(count, {
+              val: 25,
+              duration: 2.5,
+              delay: 2,
+              roundProps: "val",
+              onUpdate: () => {
+                element.textContent = `${count.val} +`;
+              },
+              ease: "power1.inOut",
+            });
+            observer4.current.disconnect(); // Disconnect the observer after animation
+          }
+        });
+      },
+      { once: true } // Add the once option
+    );
+  
     observer4.current.observe(ref4.current);
-
+  
     return () => {
       if (observer4.current) observer4.current.disconnect();
     };
   }, []);
+
 
   return (
     <motion.section

@@ -9,7 +9,7 @@ export default function Hero() {
     >
       <motion.div
         initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        animate={{ opacity: 1 }}
         transition={{ ease: "linear", duration: 2 }}
       >
         <div className="text-6xl flex flex-col justify-center items-center font-light text-white whitespace-nowrap py-4">

@@ -13,12 +13,13 @@ export default function About() {
 
   useEffect(() => {
     gsap.to(circleLogoRef.current, {
-      rotation: 360 * 360,
-      repeat: -1,
+      rotation: 360, 
       ease: "power1.inOut",
-      duration: 400,
+      duration: 10,
+      repeat: -1,
     });
   }, []);
+  
 
   useEffect(() => {
     gsap.to(circleLogoParallaxRef.current, {
@@ -54,11 +55,7 @@ export default function About() {
               initial={{ opacity: 0, x: "-40px" }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
-                type: "spring",
-                damping: 10,
-                stiffness: 300,
-                duration: 1,
-                delay: 1,
+                ease: "easeInOut", duration: 1, delay: 0.5
               }}
               className="mt-1 h-1 w-96 bg-red-600"
             ></motion.div>
