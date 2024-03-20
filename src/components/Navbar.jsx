@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
 import { useLenis } from "@studio-freight/react-lenis";
 
 // Icons
@@ -11,7 +9,6 @@ import { IoIosCall } from "react-icons/io";
 import { BiSolidOffer } from "react-icons/bi";
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [isClicked, setIsClicked] = useState(null);
   const [isHovered, setIsHovered] = useState(null);
   const [isNewsToggle, setIsNewsToggle] = useState(true);
@@ -65,26 +62,16 @@ export default function Navbar() {
 
                 {isHovered === menuKey ? (
                   isClicked === menuKey ? null : (
-                    <motion.div
-                      initial={{ x: "10px", opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ ease: "linear" }}
-                      className="px-1"
-                    >
+                    <div className="px-1">
                       <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
-                    </motion.div>
+                    </div>
                   )
                 ) : null}
 
                 {isClicked === menuKey && (
-                  <motion.div
-                    initial={{ x: "10px", opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ ease: "linear" }}
-                    className="px-1"
-                  >
+                  <div className="px-1">
                     <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
-                  </motion.div>
+                  </div>
                 )}
               </Link>
             ))}
@@ -92,7 +79,10 @@ export default function Navbar() {
         </div>
 
         <div>
-          <Link href={"tel:+919443041599"} className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150">
+          <Link
+            href={"tel:+919443041599"}
+            className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150"
+          >
             <IoIosCall />
             Call now
           </Link>

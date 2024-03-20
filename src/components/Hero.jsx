@@ -1,6 +1,5 @@
+"use client";
 import { motion } from "framer-motion";
-
-// Icons
 
 export default function Hero() {
   return (
