@@ -20,8 +20,17 @@ body {
   src: url("../fonts/ExtendedFont.ttf");
 }
 
+@font-face {
+  font-family: ManVerse;
+  src: url("../fonts/Manverse_Normal.ttf");
+}
+
 .hero-font {
   font-family: "ExtendedFont";
+}
+
+.preloader-font {
+  font-family: "ManVerse";
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
