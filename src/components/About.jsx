@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +10,7 @@ export default function About() {
   const circleLogoRef = useRef(null);
   const circleLogoParallaxRef = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.to(circleLogoRef.current, {
       rotation: 360 * 360,
       repeat: -1,
@@ -19,7 +19,7 @@ export default function About() {
     });
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.to(circleLogoParallaxRef.current, {
       x: -50,
       y: 200,

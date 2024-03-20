@@ -8,10 +8,14 @@ export default function Services() {
   const ref2 = useRef(null);
   const ref3 = useRef(null);
   const ref4 = useRef(null);
-  const observer = useRef(null);
+
+  const observer1 = useRef(null);
+  const observer2 = useRef(null);
+  const observer3 = useRef(null);
+  const observer4 = useRef(null);
 
   useEffect(() => {
-    observer.current = new IntersectionObserver((entries) => {
+    observer1.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const element = ref1.current;
@@ -31,15 +35,15 @@ export default function Services() {
       });
     });
 
-    observer.current.observe(ref1.current);
+    observer1.current.observe(ref1.current);
 
     return () => {
-      if (observer.current) observer.current.disconnect();
+      if (observer1.current) observer1.current.disconnect();
     };
   }, []);
 
   useEffect(() => {
-    observer.current = new IntersectionObserver((entries) => {
+    observer2.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const element = ref2.current;
@@ -59,15 +63,15 @@ export default function Services() {
       });
     });
 
-    observer.current.observe(ref2.current);
+    observer2.current.observe(ref2.current);
 
     return () => {
-      if (observer.current) observer.current.disconnect();
+      if (observer2.current) observer2.current.disconnect();
     };
   }, []);
 
   useEffect(() => {
-    observer.current = new IntersectionObserver((entries) => {
+    observer3.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const element = ref3.current;
@@ -87,15 +91,15 @@ export default function Services() {
       });
     });
 
-    observer.current.observe(ref3.current);
+    observer3.current.observe(ref3.current);
 
     return () => {
-      if (observer.current) observer.current.disconnect();
+      if (observer3.current) observer3.current.disconnect();
     };
   }, []);
 
   useEffect(() => {
-    observer.current = new IntersectionObserver((entries) => {
+    observer4.current = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const element = ref4.current;
@@ -115,20 +119,20 @@ export default function Services() {
       });
     });
 
-    observer.current.observe(ref4.current);
+    observer4.current.observe(ref4.current);
 
     return () => {
-      if (observer.current) observer.current.disconnect();
+      if (observer4.current) observer4.current.disconnect();
     };
   }, []);
 
   return (
     <motion.section
-      initial={{ background: "#FFF", color: "#FFF" }}
-      whileInView={{ background: "#DC2C2C", color: "#FFF" }}
+      initial={{ background: "#FFF" }}
+      whileInView={{ background: "#DC2C2C" }}
       transition={{ ease: "linear", duration: 2 }}
       id="services"
-      className="px-8 py-16 rounded-t-3xl overflow-hidden"
+      className="px-8 py-16 rounded-t-3xl text-white overflow-hidden"
     >
       <div className="flex justify-between items-start gap-8">
         <div className="w-1/3">
