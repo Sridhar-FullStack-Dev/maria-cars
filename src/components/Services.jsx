@@ -26,7 +26,7 @@ export default function Services() {
             gsap.to(count, {
               val: 25,
               duration: 2.5,
-              delay: 2,
+              delay: 1,
               roundProps: "val",
               onUpdate: () => {
                 element.textContent = `${count.val} +`;
@@ -58,7 +58,7 @@ export default function Services() {
             gsap.to(count, {
               val: 30,
               duration: 2.5,
-              delay: 2,
+              delay: 1,
               roundProps: "val",
               onUpdate: () => {
                 element.textContent = `${count.val} +`;
@@ -90,7 +90,7 @@ export default function Services() {
             gsap.to(count, {
               val: 25,
               duration: 2.5,
-              delay: 2,
+              delay: 1,
               roundProps: "val",
               onUpdate: () => {
                 element.textContent = `${count.val} +`;
@@ -122,7 +122,7 @@ export default function Services() {
             gsap.to(count, {
               val: 1000,
               duration: 2.5,
-              delay: 2,
+              delay: 1,
               roundProps: "val",
               onUpdate: () => {
                 element.textContent = `${count.val} +`;
@@ -149,7 +149,7 @@ export default function Services() {
       whileInView={{ background: "#DC2C2C" }}
       transition={{ ease: "linear", duration: 2 }}
       id="services"
-      className="px-8 py-16 rounded-t-3xl text-white overflow-hidden"
+      className="px-8 py-16 rounded-3xl text-white overflow-hidden"
     >
       <div className="flex justify-between items-start gap-8">
         <div className="w-1/3">
@@ -166,7 +166,7 @@ export default function Services() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 2 }}
-              className="mt-1 h-1 w-full bg-white"
+              className="mt-1 h-1 w-96 bg-white"
             ></motion.div>
           </div>
 

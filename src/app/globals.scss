@@ -25,12 +25,21 @@ body {
   src: url("../fonts/Manverse_Normal.ttf");
 }
 
+@font-face {
+  font-family: LemonMilk;
+  src: url("../fonts/LEMONMILK-Bold.otf");
+}
+
 .hero-font {
   font-family: "ExtendedFont";
 }
 
 .preloader-font {
   font-family: "ManVerse";
+}
+
+.footer-font {
+  font-family: "LemonMilk";
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,

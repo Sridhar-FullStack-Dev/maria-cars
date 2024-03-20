@@ -45,16 +45,16 @@ export default function About() {
             transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
             className="text-sm text-justify"
           >
-            Welcome to our car fitting company in Tuticorin! Since 2004, we've
+            Welcome to our car fitting company in Tuticorin! Since 2004, we&apos;ve
             been dedicated to serving our community with excellence. With 25
-            years of experience, we're the top choice for car fitting solutions.
+            years of experience, we&apos;re the top choice for car fitting solutions.
             Our commitment to quality and customer satisfaction drives our
-            success. Trust our skilled professionals to enhance your car's
+            success. Trust our skilled professionals to enhance your car&apos;s
             functionality, comfort, and aesthetics with precision and attention
             to detail. Experience superior results with our state-of-the-art
             technology and innovative solutions. Join our satisfied customers
             who rely on us for all their car fitting needs. Thank you for
-            considering us. We're excited to continue serving you with
+            considering us. We&apos;re excited to continue serving you with
             excellence for years to come!
           </motion.p>
         </div>
