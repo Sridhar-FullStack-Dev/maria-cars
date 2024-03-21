@@ -8,6 +8,7 @@ import { useLenis } from "@studio-freight/react-lenis";
 
 // Icons
 import { IoCallOutline } from "react-icons/io5";
+import { SiFacebook, SiYoutubeshorts, SiInstagram } from "react-icons/si";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -115,9 +116,25 @@ export default function Footer() {
           </div>
         </div>
 
-        <div>
+        <div className="pr-2">
           <h1>Contacts</h1>
-          <div className={`${poppins.className} font-light text-[12px] mt-2`}>
+
+          <div
+            className={`${poppins.className} font-light mt-2 flex justify-start items-center gap-4 text-xl`}
+          >
+            {footerSocialsLink.map((footerSocials, footerSocialsKey) => (
+              <Link
+                key={footerSocialsKey}
+                href={footerSocials.href}
+                title={footerSocials.title}
+                className="flex items-center justify-center gap-2"
+              >
+                <footerSocials.icon />
+              </Link>
+            ))}
+          </div>
+          
+          <div className={`${poppins.className} font-light text-sm mt-2`}>
             <Link
               href={"tel:+919443041599"}
               className="flex items-center justify-center gap-2"
@@ -174,5 +191,23 @@ const footerLink = [
   {
     href: "#contacts",
     name: "Contacts",
+  },
+];
+
+const footerSocialsLink = [
+  {
+    href: "/",
+    title: "Facebook",
+    icon: SiFacebook,
+  },
+  {
+    href: "/",
+    title: "Instagram",
+    icon: SiInstagram,
+  },
+  {
+    href: "/",
+    title: "YT Shorts",
+    icon: SiYoutubeshorts,
   },
 ];
