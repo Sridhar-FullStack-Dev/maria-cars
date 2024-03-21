@@ -8,7 +8,8 @@ import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Services from "@/components/Services";
 import Preloader from "@/components/Preloader";
-import FeaturesProduct from "@/components/FeaturesProduct";
+import Contacts from "@/components/Contacts";
+// import FeaturesProduct from "@/components/FeaturesProduct";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +30,8 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
-      <FeaturesProduct />
+      {/* <FeaturesProduct /> */}
+      <Contacts />
       <Footer />
     </main>
   );

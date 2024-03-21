@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import CircleLogo from "./CircleLogo";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -11,14 +11,14 @@ export default function About() {
       <div className="flex justify-between items-start gap-8">
         <div className="w-1/3">
           <div>
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, x: "-40px" }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 0.5 }}
               className="hero-font text-5xl"
             >
               About Us.
-            </motion.h1>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: "-40px" }}
@@ -58,8 +58,6 @@ export default function About() {
 
         <div className="w-1/2"></div>
       </div>
-
-      <CircleLogo />
     </section>
   );
 }

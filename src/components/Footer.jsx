@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Poppins } from "next/font/google";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLenis } from "@studio-freight/react-lenis";
 
 // Icons
@@ -14,6 +15,8 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["700", "600", "500", "400", "300", "200", "100"],
 });
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   const footerParallaxRef = useRef(null);
@@ -133,7 +136,7 @@ export default function Footer() {
               </Link>
             ))}
           </div>
-          
+
           <div className={`${poppins.className} font-light text-sm mt-2`}>
             <Link
               href={"tel:+919443041599"}
