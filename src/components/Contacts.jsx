@@ -25,31 +25,33 @@ export default function Contacts() {
       id="contacts"
       className="contacts-font px-8 pt-10 overflow-hidden bg-white text-[#DC2C2C]"
     >
-      <div className="flex justify-between items-center">
-        <div className="w-1/3 flex justify-start items-center">
-          <div className="relative bg-[#DC2C2C] h-36 w-36 rounded-full">
-            <Image
-              ref={contactLogoRef}
-              src={"/assets/circle-logo.png"}
-              alt="Maria Cars & Fitting"
-              height={1000}
-              width={1000}
-              className="w-36 rounded-full pointer-events-none"
-            />
-
-            <div className="text-4xl absolute top-6 left-9 hero-font">
+      <div className="flex sm:flex-col md:flex-row sm:justify-center justify-between items-center sm:gap-8 md:gap-0">
+        <div className="md:w-1/3 flex justify-start items-center">
+          <div className="h-36 w-36 rounded-full">
+            <div className="relative bg-red-600 h-36 w-36 rounded-full">
               <Image
-                src={"/assets/M.png"}
-                alt=""
-                height={500}
-                width={500}
-                className="w-20"
+                ref={contactLogoRef}
+                src={"/assets/circle-logo.png"}
+                alt="Maria Cars & Fitting"
+                height={1000}
+                width={1000}
+                className="w-36 rounded-full pointer-events-none"
               />
+
+              <div className="text-4xl absolute top-6 left-9 hero-font">
+                <Image
+                  src={"/assets/M.png"}
+                  alt=""
+                  height={500}
+                  width={500}
+                  className="w-20 pointer-events-none"
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="w-2/3 flex justify-between items-start">
+        <div className="md:w-2/3 flex sm:flex-col md:flex-row justify-between items-start sm:gap-4 md:gap-0">
           <div className="w-64 overflow-hidden">
             <motion.div
               initial={{
@@ -66,7 +68,9 @@ export default function Contacts() {
               className="p-4"
             >
               <Link
-                href={"https://www.instagram.com/mariacars_tuty?igsh=MTIxNTdpdjIyMXRtcA=="}
+                href={
+                  "https://www.instagram.com/mariacars_tuty?igsh=MTIxNTdpdjIyMXRtcA=="
+                }
                 className="flex justify-center items-center gap-4"
               >
                 <SiInstagram className="text-3xl" />
@@ -91,7 +95,9 @@ export default function Contacts() {
               className="p-4"
             >
               <Link
-                href={"https://www.facebook.com/profile.php?id=61557471537791&mibextid=ZbWKwL"}
+                href={
+                  "https://www.facebook.com/profile.php?id=61557471537791&mibextid=ZbWKwL"
+                }
                 className="flex justify-center items-center gap-4"
               >
                 <SiFacebook className="text-3xl" />

@@ -53,23 +53,23 @@ export default function Footer() {
           <h1 className="mt-8">Start Fitting your cars !</h1>
         </div>
 
-        <div className="relative h-36 w-36 rounded-full">
-          <div className="relative bg-red-600 h-36 w-36 rounded-full">
+        <div className="sm:h-20 md:h-36 sm:w-20 md:w-36 rounded-full">
+          <div className="relative bg-red-600 sm:h-20 md:h-36 sm:w-20 md:w-36 rounded-full">
             <Image
               src={"/assets/circle-logo.png"}
               alt="Maria Cars & Fitting"
               height={1000}
               width={1000}
-              className="w-36 rounded-full pointer-events-none"
+              className="sm:w-20 md:w-36 rounded-full pointer-events-none"
             />
 
-            <div className="text-4xl absolute top-6 left-9 hero-font">
+            <div className="text-4xl absolute sm:top-4 md:top-6 sm:left-[1.3rem] md:left-9 hero-font">
               <Image
                 src={"/assets/M.png"}
                 alt=""
                 height={500}
                 width={500}
-                className="w-20 pointer-events-none"
+                className="sm:w-10 md:w-20 pointer-events-none"
               />
             </div>
           </div>
@@ -78,13 +78,13 @@ export default function Footer() {
 
       <div
         ref={footerParallaxRef}
-        className="footer-font text-8xl absolute top-0 left-0 opacity-5 z-10"
+        className="footer-font sm:text-7xl md:text-8xl absolute top-0 left-0 opacity-5 z-10"
       >
         <h1 className="mt-8">Upgrade Your Ride</h1>
         <h1 className="mt-8">Start Fitting your cars !</h1>
       </div>
 
-      <div className="w-full flex justify-between items-start text-[14px] mt-32 relative z-20">
+      <div className="w-full flex sm:flex-col md:flex-row sm:gap-6 md:gap-0 justify-between items-start text-[14px] sm:mt-8 md:mt-32 relative z-20">
         <div>
           <h1>Address</h1>
           <div className={`${poppins.className} font-light text-[12px] mt-2`}>
@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex justify-between items-center text-[12px] mt-8 pt-10 pb-5">
+      <div className="flex justify-between items-center sm:text-[10px] text-xs mt-8 pt-10 pb-5 whitespace-nowrap">
         <div
           className={`${poppins.className} flex items-center justify-center`}
         >
