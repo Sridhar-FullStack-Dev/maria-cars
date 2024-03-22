@@ -60,16 +60,16 @@ export default function About() {
           {aboutHeader.map((aboutHeaders, aboutHeadersKey) => (
             <div
               key={aboutHeadersKey}
-              className="flex justify-center items-center gap-4 text-2xl "
+              className="flex justify-center items-center gap-4 text-2xl"
             >
               <Image
                 src={`/assets/about/${aboutHeaders.image}.png`}
                 alt=""
                 height={200}
                 width={200}
-                className="h-7 w-7"
+                className="sm:h-5 md:h-7 sm:w-5 md:w-7"
               />
-              <div className="text-3xl">{aboutHeaders.heading}&nbsp;</div>
+              <div className="sm:text-xl md:text-3xl">{aboutHeaders.heading}&nbsp;</div>
             </div>
           ))}
         </div>
@@ -78,38 +78,38 @@ export default function About() {
           ref={aboutHeadingRef2}
           className="footer-font uppercase flex items-center justify-center gap-8"
         >
-          {aboutHeader.map((aboutHeaders, aboutHeadersKey) => (
+          {aboutHeader.map((aboutHeaders2, aboutHeadersKey2) => (
             <div
-              key={aboutHeadersKey}
+              key={aboutHeadersKey2}
               className="flex justify-center items-center gap-4 text-2xl "
             >
               <Image
-                src={`/assets/about/${aboutHeaders.image}.png`}
+                src={`/assets/about/${aboutHeaders2.image}.png`}
                 alt=""
                 height={200}
                 width={200}
-                className="h-7 w-7"
+                className="sm:h-5 md:h-7 sm:w-5 md:w-7"
               />
-              <div className="text-3xl">{aboutHeaders.heading}&nbsp;</div>
+              <div className="sm:text-xl md:text-3xl">{aboutHeaders2.heading}&nbsp;</div>
             </div>
           ))}
         </div>
       </div>
 
       <div className="hero-font w-full">
-        <div className="flex justify-center items-center text-3xl">
+        <div className="flex justify-center items-center sm:text-xl md:text-3xl">
           <p className="text-center px-12">
             Your Premier Car Fitting Company for Luxury Customizations!
           </p>
         </div>
 
-        <div className="footer-font font-light text-gray-400 text-lg text-center flex justify-center items-center gap-8 px-12 mt-4">
+        <div className="footer-font font-light text-gray-400 sm:text-[10px] md:text-lg whitespace-nowrap text-center flex justify-center items-center sm:gap-4 md:gap-8 px-12 mt-4">
           <p>Since June 6 2004</p>
           <p>Thoothukudi | IND.</p>
         </div>
       </div>
 
-      <div className="px-12 flex justify-center items-center gap-4">
+      <div className="px-12 flex sm:flex-col md:flex-row justify-center items-center gap-4">
         <motion.div
           initial={{ filter: "blur(10px)" }}
           whileInView={{ filter: "blur(0px)" }}
@@ -143,8 +143,8 @@ export default function About() {
         </motion.div>
       </div>
 
-      <div className="px-12 text-justify flex justify-center items-center mt-4">
-        <div className="flex items-center justify-center gap-4 text-base">
+      <div className="sm:px-4 md:px-12 text-justify flex justify-center items-center mt-4">
+        <div className="flex sm:flex-col md:flex-row items-center justify-center gap-4 text-base">
           At Maria cars & Extra Fitting, we pride ourselves on setting world
           class standards in car fittings, offering a comprehensive range of
           luxury customizations for discerning enthusiasts worldwide. From

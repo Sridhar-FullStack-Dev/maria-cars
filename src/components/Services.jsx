@@ -151,22 +151,23 @@ export default function Services() {
       id="services"
       className="px-8 py-16 rounded-3xl text-white overflow-hidden"
     >
-      <div className="flex justify-between items-start gap-8">
+      <div className="flex sm:flex-col md:flex-row justify-between items-start gap-8">
         <div className="w-1/3">
           <div>
             <motion.h1
               initial={{ opacity: 0, x: "-20px" }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
-              className="hero-font text-5xl"
+              className="hero-font sm:text-4xl md:text-5xl"
             >
               Services.
             </motion.h1>
+
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 2 }}
-              className="mt-1 h-1 w-96 bg-white"
+              className="mt-1 h-1 sm:w-72 md:w-96 bg-white"
             ></motion.div>
           </div>
 
@@ -174,7 +175,7 @@ export default function Services() {
             initial={{ opacity: 0, x: "-20px" }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ ease: "easeInOut", duration: 1, delay: 2 }}
-            className="mt-8 w-96 text-sm text-justify"
+            className="mt-8 sm:w-72 md:w-96 sm:text-xs md:text-sm text-justify"
           >
             We provide all types of fitting services for your car in a world
             class standards and we install stunning aesthetic elements,
@@ -184,36 +185,40 @@ export default function Services() {
           </motion.p>
         </div>
 
-        <div className="w-2/3">
+        <div className="sm:w-full md:w-2/3">
           <SwiperJS />
         </div>
       </div>
 
       <div className="mt-8 p-8 w-full bg-white text-red-600 flex justify-between items-center rounded-2xl">
-        <div className="flex items-center justify-evenly w-full gap-4 hero-font text-6xl">
+        <div className="flex sm:flex-col md:flex-row items-center justify-evenly w-full gap-4 hero-font sm:text-3xl md:text-6xl">
           <div className="w-60 overflow-hidden">
-            <div ref={ref1} className="text-center">0 +</div>
+            <div ref={ref1} className="text-center">
+              0 +
+            </div>
             <p className="text-sm w-full text-center py-4">
               Cars Services / Day
             </p>
           </div>
 
           <div className="w-60 overflow-hidden">
-            <div ref={ref2} className="text-center">0 +</div>
-            <p className="text-sm w-full text-center py-4">
-              Cars Washes / Day
-            </p>
+            <div ref={ref2} className="text-center">
+              0 +
+            </div>
+            <p className="text-sm w-full text-center py-4">Cars Washes / Day</p>
           </div>
 
           <div className="w-60 overflow-hidden">
-            <div ref={ref3} className="text-center">0 +</div>
-            <p className="text-sm w-full text-center py-4">
-              Years Of Service
-            </p>
+            <div ref={ref3} className="text-center">
+              0 +
+            </div>
+            <p className="text-sm w-full text-center py-4">Years Of Service</p>
           </div>
 
           <div className="w-fit overflow-hidden">
-            <div ref={ref4} className="text-center">0 +</div>
+            <div ref={ref4} className="text-center">
+              0 +
+            </div>
             <p className="text-sm w-full text-center py-4">
               Cars Serviced / Month
             </p>

@@ -24,17 +24,17 @@ export default function SwiperJS() {
           clickable: true,
         }}
         breakpoints={{
+          200: {
+            slidesPerView: 2,
+          },
           640: {
             slidesPerView: 2,
-            spaceBetween: 20,
           },
           768: {
             slidesPerView: 4,
-            spaceBetween: 40,
           },
           1024: {
             slidesPerView: 5,
-            spaceBetween: 10,
           },
         }}
         className="mySwiper rounded-xl"
@@ -47,10 +47,10 @@ export default function SwiperJS() {
                 alt={service.name}
                 height={1000}
                 width={1000}
-                className="h-52 w-52 pointer-events-none object-cover rounded-lg"
+                className="sm:h-48 md:h-52 sm:w-48 md:w-52 pointer-events-none object-cover rounded-lg"
               />
 
-              <p className="text-center text-sm">{service.name}</p>
+              <p className="text-center sm:text-xs md:text-sm mt-4">{service.name}</p>
             </div>
           </SwiperSlide>
         ))}

@@ -143,7 +143,6 @@ export default function Footer() {
               href={"tel:+919443041599"}
               className="flex items-center justify-center gap-2"
             >
-              {" "}
               <IoCallOutline /> +91 94430 41599
             </Link>
           </div>
@@ -200,12 +199,12 @@ const footerLink = [
 
 const footerSocialsLink = [
   {
-    href: "/",
+    href: "https://www.facebook.com/people/Maria-CarsExtra-Fittings/61557471537791/?mibextid=ZbWKwL",
     title: "Facebook",
     icon: SiFacebook,
   },
   {
-    href: "/",
+    href: "https://www.instagram.com/mariacars_tuty?igsh=MTIxNTdpdjIyMXRtcA==",
     title: "Instagram",
     icon: SiInstagram,
   },

@@ -58,16 +58,16 @@ export default function Preloader() {
         initial={{ opacity: 0, x: "-100px" }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ ease: "easeInOut", duration: 2, delay: 0.1 }}
-        className="mt-16 text-7xl"
+        className="mt-16 sm:text-4xl md:text-7xl"
       >
-        Welcome To Tuticorin&apos;s Best Car Fitting Company
+        <h1>Welcome To Tuticorin&apos;s Best Car Fitting Company</h1>
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, x: "-100px" }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ ease: "easeInOut", duration: 2, delay: 1 }}
-        className="mt-16 text-2xl"
+        className="mt-16 sm:text-lg md:text-2xl whitespace-nowrap"
       >
         Maria Cars & Extra Fitting
       </motion.div>
@@ -76,11 +76,11 @@ export default function Preloader() {
         initial={{ width: "0%" }}
         animate={{ width: `${loadingPercentage}%` }}
         transition={{ ease: "easeInOut", duration: 2 }}
-        className="bg-white h-2"
+        className="bg-white sm:h-1 md:h-2"
       ></motion.div>
 
       <div className="w-60 overflow-hidden">
-        <div ref={preloaderRef} className="text-5xl hero-font tracking-wide">
+        <div ref={preloaderRef} className="sm:text-3xl md:text-5xl hero-font tracking-wide">
           0 %
         </div>
         <div className="text-sm py-4"></div>

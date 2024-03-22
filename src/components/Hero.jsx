@@ -12,11 +12,11 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ ease: "linear", duration: 2 }}
       >
-        <div className="text-6xl flex flex-col justify-center items-center font-light text-white whitespace-nowrap py-4">
-          <div className="flex justify-center items-center gap-4">
+        <div className="sm:text-base md:text-6xl flex flex-col justify-center items-center font-light text-white whitespace-nowrap md:py-4">
+          <div className="flex justify-center items-center sm:gap-2 md:gap-4">
             The Best <span className="font-bold">Car Fitting</span>
           </div>
-          <div className="flex items-center justify-center gap-4 mt-4">
+          <div className="flex items-center justify-center sm:gap-2 md:gap-4 md:mt-4">
             Company In <span className="font-bold">Thoothukudi</span>
           </div>
         </div>

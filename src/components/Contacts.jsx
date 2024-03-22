@@ -26,7 +26,7 @@ export default function Contacts() {
       className="contacts-font px-8 pt-10 overflow-hidden bg-white text-[#DC2C2C]"
     >
       <div className="flex justify-between items-center">
-        <div className="w-1/3">
+        <div className="w-1/3 flex justify-start items-center">
           <div className="relative bg-[#DC2C2C] h-36 w-36 rounded-full">
             <Image
               ref={contactLogoRef}
@@ -66,7 +66,7 @@ export default function Contacts() {
               className="p-4"
             >
               <Link
-                href={"/"}
+                href={"https://www.instagram.com/mariacars_tuty?igsh=MTIxNTdpdjIyMXRtcA=="}
                 className="flex justify-center items-center gap-4"
               >
                 <SiInstagram className="text-3xl" />
@@ -91,7 +91,7 @@ export default function Contacts() {
               className="p-4"
             >
               <Link
-                href={"/"}
+                href={"https://www.facebook.com/profile.php?id=61557471537791&mibextid=ZbWKwL"}
                 className="flex justify-center items-center gap-4"
               >
                 <SiFacebook className="text-3xl" />
@@ -116,7 +116,7 @@ export default function Contacts() {
               className="p-4"
             >
               <Link
-                href={"/"}
+                href={"tel:+919443041599"}
                 className="flex justify-center items-center gap-4"
               >
                 <IoCallOutline className="text-3xl" />
@@ -134,7 +134,7 @@ export default function Contacts() {
           width="600"
           height="450"
           style={{ border: 0 }}
-          allowfullscreen="true"
+          allowFullScreen={true}
           loading="lazy"
           className="w-full h-64 rounded-3xl object-cover"
         ></iframe>
