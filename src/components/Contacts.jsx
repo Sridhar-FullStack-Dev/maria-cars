@@ -1,103 +1,85 @@
-import gsap from "gsap";
-import Link from "next/link";
-import { useEffect, useRef } from "react";
-
-// Icons
-import { BiPhoneCall } from "react-icons/bi";
-import { SiFacebook } from "react-icons/si";
-import { RiInstagramFill } from "react-icons/ri";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Contacts() {
-  const textRef = useRef(null);
-  const contactsTextRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          gsap.fromTo(
-            textRef.current.childNodes,
-            { autoAlpha: 0 },
-            {
-              duration: 0.6,
-              autoAlpha: 1,
-              ease: "power3.inOut",
-              stagger: 0.05,
-            }
-          );
-        }
-      });
-    });
-
-    observer.observe(textRef.current);
-    return () => observer.unobserve(textRef.current);
-  }, []);
-
-  useEffect(() => {
-    const textElement = contactsTextRef.current;
-
-    const tl = gsap.timeline();
-    tl.to(textElement, { xPercent: -100, duration: 70, ease: "power1.in" });
-    tl.repeat(-1);
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
-
-  const contactHeading = "Contacts ".repeat(50);
-  const text =
-    "Don't Hesitate. Contact now and start fitting your cars and make your ride style and cool";
 
   return (
-    <section className="relative text-[#DC2C2C] px-8 py-16 contacts-font overflow-hidden">
-      <div
-        ref={contactsTextRef}
-        className="absolute top-0 left-0 flex justify-between items-center w-auto py-4 text-5xl whitespace-nowrap"
-      >
-        {contactHeading}
-      </div>
+    <section className="contacts-font px-8 pt-10 overflow-hidden bg-white text-[#DC2C2C]">
+      <div>
 
-      <div className="flex justify-between items-between mt-10 tracking-wider">
-        <div className="text-xl w-1/2 flex flex-col items-start justify-center gap-10">
-          {contactsLink.map((contactLink, contactLinkKey) => (
-            <Link
-              key={contactLinkKey}
-              href={contactLink.href}
-              className="flex justify-start items-center gap-4"
+        <motion.div
+          animate={{ x: "-100%" }}
+          transition={{ repeat: Infinity, duration: 40, ease: "easeOut" }}
+          className="flex items-center gap-4 text-2xl mt-12 tracking-wider footer-font relative uppercase"
+        >
+          {contactMarquee.map((marquee1, key1) => (
+            <div
+              key={key1}
+              className="whitespace-nowrap flex gap-2 items-center justify-center"
             >
-              <div className="text-3xl">
-                <contactLink.icon />
-              </div>
-              <div> {contactLink.links}</div>
-            </Link>
+              <Image
+                src={"/assets/contacts/shape.svg"}
+                alt=""
+                height={20}
+                width={20}
+                className="h-3 w-3"
+              />
+              {marquee1.content}
+            </div>
           ))}
-        </div>
-
-        <div ref={textRef} className="w-1/2 text-justify text-3xl">
-          {text.split("").map((char, index) => {
-            return <span key={index}>{char}</span>;
-          })}
-        </div>
+          {contactMarquee.map((marquee2, key2) => (
+            <div
+              key={key2}
+              className="whitespace-nowrap flex gap-2 items-center justify-center"
+            >
+              <Image
+                src={"/assets/contacts/shape.svg"}
+                alt=""
+                height={20}
+                width={20}
+                className="h-3 w-3"
+              />
+              {marquee2.content}
+            </div>
+          ))}
+          {contactMarquee.map((marquee3, key3) => (
+            <div
+              key={key3}
+              className="whitespace-nowrap flex gap-2 items-center justify-center"
+            >
+              <Image
+                src={"/assets/contacts/shape.svg"}
+                alt=""
+                height={20}
+                width={20}
+                className="h-3 w-3"
+              />
+              {marquee3.content}
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 }
 
-const contactsLink = [
+const contactMarquee = [
   {
-    href: "/",
-    icon: SiFacebook,
-    links: "Facebook",
+    content: "Automatic Car Wash",
   },
   {
-    href: "/",
-    icon: RiInstagramFill,
-    links: "Instagram",
+    content: "Luxury Seats",
   },
   {
-    href: "/",
-    icon: BiPhoneCall,
-    links: "Call Now",
+    content: "Customizable RGB Lights",
+  },
+  {
+    content: "Varities Of Imported Horns",
+  },
+  {
+    content: "Top Notch Bass & Woofers",
+  },
+  {
+    content: "Maria Cars",
   },
 ];

@@ -7,6 +7,7 @@ import { useLenis } from "@studio-freight/react-lenis";
 import { FaTimes } from "react-icons/fa";
 import { IoIosCall } from "react-icons/io";
 import { BiSolidOffer } from "react-icons/bi";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isClicked, setIsClicked] = useState(null);
@@ -42,7 +43,15 @@ export default function Navbar() {
 
       {/* Navbar */}
       <div className="flex justify-between items-center py-2 px-8 bg-white text-sm">
-        <div>Maria Cars</div>
+        <div>
+          <Image
+            src={"/assets/logo.png"}
+            alt="Maria Cars"
+            height={100}
+            width={100}
+            className="w-9"
+          />
+        </div>
 
         <div className="flex justify-center items-center">
           <div className="flex items-center justify-between gap-4">

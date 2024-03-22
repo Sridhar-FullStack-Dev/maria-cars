@@ -35,6 +35,7 @@ export default function Footer() {
       },
     });
   }, []);
+  
 
   // Lenis
   const lenis = useLenis();
@@ -94,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h1>Links</h1>
+          <h1>Menus</h1>
           <div
             className={`${poppins.className} font-light text-[12px] flex flex-col justify-center gap-2 mt-2`}
           >
@@ -120,7 +121,7 @@ export default function Footer() {
         </div>
 
         <div className="pr-2">
-          <h1>Contacts</h1>
+          <h1>Links</h1>
 
           <div
             className={`${poppins.className} font-light mt-2 flex justify-start items-center gap-4 text-xl`}
@@ -166,7 +167,7 @@ export default function Footer() {
         <div
           className={`${poppins.className} flex items-center justify-center`}
         >
-          copyright <div className="footer-font mx-2">Magnetize</div>
+          copyright <div className="footer-font mx-2">Magnet-X</div>
           {year}
         </div>
       </div>
