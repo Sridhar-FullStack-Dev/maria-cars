@@ -121,7 +121,14 @@ export default function FeaturedProducts() {
                     className="flex justify-center items-center gap-1"
                   >
                     <div className="text-[12px] flex items-center justify-center gap-1">
-                      for more <MdOutlineArrowRightAlt className="text-3xl" />
+                      for more{" "}
+                      <Image
+                        src={"/assets/ft-products/arrow.svg"}
+                        alt=""
+                        height={90}
+                        width={100}
+                        className="w-28 h-24"
+                      />
                     </div>
                     <Link
                       href={"tel:+919443041599"}
@@ -232,8 +239,7 @@ export default function FeaturedProducts() {
           </div>
         </div>
 
-        <div>
-        </div>
+        <div></div>
       </section>
     </main>
   );

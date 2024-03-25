@@ -192,11 +192,22 @@ export default function Navbar() {
                   ))}
                   <div className="flex items-center justify-start gap-4">
                     <div className="h-3 w-3 bg-[#DC2C2C]"></div>
-                    <Link href={"/featured-products"}>Featured Products</Link>
+                    <Link
+                      href={"/featured-products"}
+                      onClick={() => setIsMenuToggle(false)}
+                    >
+                      Featured Products
+                    </Link>
                   </div>
+                  
                   <div className="flex items-center justify-start gap-4">
                     <div className="h-3 w-3 bg-[#DC2C2C]"></div>
-                    <Link href={"https://forms.office.com/r/x2rmNmLSQ7"}>Give us feedback</Link>
+                    <Link
+                      href={"https://forms.office.com/r/x2rmNmLSQ7"}
+                      onClick={() => setIsMenuToggle(false)}
+                    >
+                      Give us feedback
+                    </Link>
                   </div>
                 </div>
               </div>
