@@ -1,3 +1,4 @@
+"use client";
 import gsap from "gsap";
 import Link from "next/link";
 import Image from "next/image";
@@ -35,7 +36,6 @@ export default function Footer() {
       },
     });
   }, []);
-  
 
   // Lenis
   const lenis = useLenis();

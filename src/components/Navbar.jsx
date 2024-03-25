@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Poppins } from "next/font/google";
+import { usePathname } from "next/navigation";
 import { useLenis } from "@studio-freight/react-lenis";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -10,6 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import { BiSolidOffer } from "react-icons/bi";
+import { VscFeedback } from "react-icons/vsc";
 import { IoIosCall, IoMdClose } from "react-icons/io";
 import { SiFacebook, SiYoutubeshorts, SiInstagram } from "react-icons/si";
 
@@ -19,10 +21,13 @@ const poppins = Poppins({
 });
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isClicked, setIsClicked] = useState(null);
   const [isHovered, setIsHovered] = useState(null);
   const [isNewsToggle, setIsNewsToggle] = useState(true);
   const [isMenuToggle, setIsMenuToggle] = useState(false);
+  const [isFeaturedHovered, setIsFeaturedHovered] = useState(null);
+  const isActive = pathname === "/featured-products";
 
   // Lenis
   const lenis = useLenis();
@@ -37,7 +42,7 @@ export default function Navbar() {
               <BiSolidOffer className="sm:text-lg md:text-xl text-white" />
             </div>
 
-            <div className="text-red-600 whitespace-nowrap">
+            <div className="text-[#DC2C2C] whitespace-nowrap">
               Exciting offers awaits only for you{" "}
               <Link href={"tel:+919443041599"} className="underline">
                 Contact Now.
@@ -96,16 +101,45 @@ export default function Navbar() {
                   )}
                 </Link>
               ))}
+
+              <Link
+                href={"/featured-products"}
+                onMouseEnter={() => setIsFeaturedHovered(true)}
+                onMouseLeave={() => setIsFeaturedHovered(null)}
+                className={`${
+                  isActive ? "text-red-600" : "text-black"
+                } hover:text-red-600 transition-all duration-200 ease-linear`}
+              >
+                Featured Products
+                {isFeaturedHovered && !isActive ? (
+                  <div className="px-1">
+                    <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
+                  </div>
+                ) : null}
+                {isActive ? (
+                  <div className="px-1">
+                    <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
+                  </div>
+                ) : null}
+              </Link>
             </div>
           </div>
 
-          <div className="sm:hidden md:block">
+          <div className="sm:hidden md:flex items-center justify-center gap-4">
             <Link
               href={"tel:+919443041599"}
               className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white sm:text-[8px] md:text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150"
             >
               <IoIosCall />
               Call now
+            </Link>
+
+            <Link
+              href={"https://forms.office.com/r/x2rmNmLSQ7"}
+              className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white sm:text-[8px] md:text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150"
+            >
+              <VscFeedback />
+              Give Feedback
             </Link>
           </div>
 
@@ -137,14 +171,14 @@ export default function Navbar() {
                 />
               </div>
 
-              <div className="mt-8 whitespace-nowrap">
-                {navMenu.map((mobileMenu, mobileMenuKey) => (
-                  <div
-                    key={mobileMenuKey}
-                    className="flex items-center justify-start gap-2 mb-4"
-                  >
-                    <div className="h-3 w-3 bg-[#DC2C2C]"></div>
-                    <div>
+              <div className="mb-4">
+                <div className="mt-8 whitespace-nowrap">
+                  {navMenu.map((mobileMenu, mobileMenuKey) => (
+                    <div
+                      key={mobileMenuKey}
+                      className="flex items-center justify-start gap-4"
+                    >
+                      <div className="h-3 w-3 bg-[#DC2C2C]"></div>
                       <Link
                         href={mobileMenu.href}
                         onClick={() => {
@@ -155,8 +189,16 @@ export default function Navbar() {
                         {mobileMenu.name}
                       </Link>
                     </div>
+                  ))}
+                  <div className="flex items-center justify-start gap-4">
+                    <div className="h-3 w-3 bg-[#DC2C2C]"></div>
+                    <Link href={"/featured-products"}>Featured Products</Link>
                   </div>
-                ))}
+                  <div className="flex items-center justify-start gap-4">
+                    <div className="h-3 w-3 bg-[#DC2C2C]"></div>
+                    <Link href={"https://forms.office.com/r/x2rmNmLSQ7"}>Give us feedback</Link>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -214,10 +256,6 @@ const navMenu = [
   {
     href: "#services",
     name: "Services",
-  },
-  {
-    href: "#featured-products",
-    name: "Featured Products",
   },
   {
     href: "#contacts",

@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import Image from "next/image";
 
-export default function SwiperJS() {
+export default function LatestProducts() {
   return (
     <>
       <Swiper
@@ -37,7 +37,7 @@ export default function SwiperJS() {
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 10,
           },
         }}
@@ -65,38 +65,38 @@ export default function SwiperJS() {
 
 const servicerSwiper = [
   {
-    name: "Alloy wheels",
+    name: "Horns",
     image:
-      "https://images.pexels.com/photos/5623498/pexels-photo-5623498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Entertainments With Top Notch Bass",
+    name: "Speakers",
     image:
-      "https://images.pexels.com/photos/373632/pexels-photo-373632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Jeep Fittings",
+    name: "Woofers",
     image:
-      "https://images.pexels.com/photos/1638459/pexels-photo-1638459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Retro Cars Fitting",
+    name: "Seats",
     image:
-      "https://images.pexels.com/photos/19310209/pexels-photo-19310209/free-photo-of-headlights-and-grill-of-vintage-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Luxury Interiors Fitting",
+    name: "Car Accessories",
     image:
-      "https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Customizable RGB Lights",
+    name: "Car Props",
     image:
-      "https://images.pexels.com/photos/2127022/pexels-photo-2127022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Varities Of Imported Horns",
+    name: "Aesthetic elements",
     image:
-      "https://images.pexels.com/photos/137600/pexels-photo-137600.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];

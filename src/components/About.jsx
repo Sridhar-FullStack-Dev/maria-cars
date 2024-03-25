@@ -45,8 +45,6 @@ export default function About() {
     });
   }, []);
 
-  //Potraits
-
   return (
     <section
       id="about"

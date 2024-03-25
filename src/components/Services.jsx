@@ -33,7 +33,7 @@ export default function Services() {
               },
               ease: "power1.inOut",
             });
-            observer1.current.disconnect(); // Disconnect the observer after animation
+            observer1.current.disconnect();
           }
         });
       },
@@ -65,7 +65,7 @@ export default function Services() {
               },
               ease: "power1.inOut",
             });
-            observer2.current.disconnect(); // Disconnect the observer after animation
+            observer2.current.disconnect();
           }
         });
       },
@@ -97,7 +97,7 @@ export default function Services() {
               },
               ease: "power1.inOut",
             });
-            observer3.current.disconnect(); // Disconnect the observer after animation
+            observer3.current.disconnect();
           }
         });
       },
@@ -129,7 +129,7 @@ export default function Services() {
               },
               ease: "power1.inOut",
             });
-            observer4.current.disconnect(); // Disconnect the observer after animation
+            observer4.current.disconnect();
           }
         });
       },
