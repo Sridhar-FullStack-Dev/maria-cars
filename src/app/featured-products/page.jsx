@@ -120,14 +120,14 @@ export default function FeaturedProducts() {
                     transition={{ ease: "easeInOut", duration: 0.3 }}
                     className="flex justify-center items-center gap-1"
                   >
-                    <div className="text-[12px] flex items-center justify-center gap-1">
+                    <div className="text-[12px] flex items-center justify-center gap-2">
                       for more{" "}
                       <Image
                         src={"/assets/ft-products/arrow.svg"}
                         alt=""
-                        height={90}
-                        width={100}
-                        className="w-28 h-24"
+                        height={500}
+                        width={500}
+                        className="w-9"
                       />
                     </div>
                     <Link

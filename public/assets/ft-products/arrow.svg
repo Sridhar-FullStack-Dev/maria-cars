@@ -1,5 +1,5 @@
-<svg width="100" height="90" viewBox="0 0 40 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M39 11.5C23.4 17.5 26.8333 21 30.5 22" stroke="RED"/>
-<path d="M39 11.5C23.4 5.5 26.8333 2 30.5 1" stroke="RED"/>
-<line x1="39" y1="11.5" y2="11.5" stroke="RED"/>
+<svg width="129" height="91" viewBox="0 0 129 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M125.998 46C74.9207 68.8571 86.1622 82.1905 98.1676 86" stroke="#FFF" stroke-width="10"/>
+<path d="M125.998 45C74.9207 22.1429 86.1622 8.80952 98.1676 5" stroke="#FFF" stroke-width="10"/>
+<line x1="128.127" y1="45" y2="45" stroke="#FFF" stroke-width="10"/>
 </svg>
