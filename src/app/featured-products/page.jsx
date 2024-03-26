@@ -19,6 +19,10 @@ export default function FeaturedProducts() {
   const [isHoveredSecond, setIsHoveredSecond] = useState(false);
   const [isHoveredThird, setIsHoveredThird] = useState(false);
 
+  const [isLatestFirst, setIsLatestFirst] = useState(false);
+  const [isLatestSecond, setIsLatestSecond] = useState(false);
+  const [isLatestThird, setIsLatestThird] = useState(false);
+
   return (
     <main>
       <section className="hero-font overflow-hidden">
@@ -307,10 +311,10 @@ export default function FeaturedProducts() {
           <div className="p-8 footer-font">
             <div className="flex sm:flex-col md:flex-row w-full justify-center items-center gap-4">
               <motion.div
-                onMouseEnter={() => setIsHoveredFirst(true)}
-                onMouseLeave={() => setIsHoveredFirst(false)}
+                onMouseEnter={() => setIsLatestFirst(true)}
+                onMouseLeave={() => setIsLatestFirst(false)}
                 className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
-                  isHoveredFirst ? "md:w-[40rem]" : "md:w-72"
+                  isLatestFirst ? "md:w-[40rem]" : "md:w-72"
                 }`}
               >
                 <div className="flex justify-between items-center gap-4 whitespace-nowrap">
@@ -320,7 +324,7 @@ export default function FeaturedProducts() {
 
                   <div
                     className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
-                      isHoveredFirst ? "md:flex" : "md:hidden"
+                      isLatestFirst ? "md:flex" : "md:hidden"
                     }`}
                   >
                     <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
@@ -364,10 +368,10 @@ export default function FeaturedProducts() {
               </motion.div>
 
               <motion.div
-                onMouseEnter={() => setIsHoveredSecond(true)}
-                onMouseLeave={() => setIsHoveredSecond(false)}
+                onMouseEnter={() => setIsLatestSecond(true)}
+                onMouseLeave={() => setIsLatestSecond(false)}
                 className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
-                  isHoveredSecond ? "md:w-[40rem]" : "md:w-72"
+                  isLatestSecond ? "md:w-[40rem]" : "md:w-72"
                 }`}
               >
                 <div className="flex justify-between items-center gap-4 whitespace-nowrap">
@@ -377,7 +381,7 @@ export default function FeaturedProducts() {
 
                   <div
                     className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
-                      isHoveredSecond ? "md:flex" : "md:hidden"
+                      isLatestSecond ? "md:flex" : "md:hidden"
                     }`}
                   >
                     <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
@@ -421,10 +425,10 @@ export default function FeaturedProducts() {
               </motion.div>
 
               <motion.div
-                onMouseEnter={() => setIsHoveredThird(true)}
-                onMouseLeave={() => setIsHoveredThird(false)}
+                onMouseEnter={() => setIsLatestThird(true)}
+                onMouseLeave={() => setIsLatestThird(false)}
                 className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
-                  isHoveredThird ? "md:w-[40rem]" : "md:w-72"
+                  isLatestThird ? "md:w-[40rem]" : "md:w-72"
                 }`}
               >
                 <div className="flex justify-between items-center gap-4 whitespace-nowrap">
@@ -434,7 +438,7 @@ export default function FeaturedProducts() {
 
                   <div
                     className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
-                      isHoveredThird ? "md:flex" : "md:hidden"
+                      isLatestThird ? "md:flex" : "md:hidden"
                     }`}
                   >
                     <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
