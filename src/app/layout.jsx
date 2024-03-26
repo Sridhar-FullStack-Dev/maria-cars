@@ -34,6 +34,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="hVkKiZkjc_fsboNJr30P7zyl9ol28yApUVsIw4epA-A"
+        />
+      </head>
       <body className={`${poppins.className} antialiased`}>
         <Navbar />
         <SmoothScroll>
