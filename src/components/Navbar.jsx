@@ -26,6 +26,7 @@ export default function Navbar() {
   const [isHovered, setIsHovered] = useState(null);
   const [isNewsToggle, setIsNewsToggle] = useState(true);
   const [isMenuToggle, setIsMenuToggle] = useState(false);
+  const [isHomeHovered, setIsHomeHovered] = useState(null);
   const [isFeaturedHovered, setIsFeaturedHovered] = useState(null);
   const isActive = pathname === "/featured-products";
 
@@ -61,17 +62,41 @@ export default function Navbar() {
         {/* Navbar */}
         <div className="flex justify-between items-center py-2 sm:px-4 md:px-8 bg-white text-sm">
           <div>
-            <Image
-              src={"/assets/logo.png"}
-              alt="Maria Cars"
-              height={100}
-              width={100}
-              className="sm:w-8 md:w-9"
-            />
+            <div className="flex items-center justify-center">
+              <Image
+                src={"/assets/logo.png"}
+                alt="Maria Cars"
+                height={100}
+                width={100}
+                className="sm:w-4 md:w-5"
+              />
+
+              <div className="sm:text-xs md:text-sm">ARIA</div>
+            </div>
+
+            <div className="sm:text-[8px] md:text-xs">
+              Cars & Extra Fittings
+            </div>
           </div>
 
           <div className="flex justify-center items-center sm:hidden md:flex">
             <div className="flex items-center justify-between gap-4">
+              {/* Home */}
+              <Link
+                href={"/"}
+                onMouseEnter={() => setIsHomeHovered(true)}
+                onMouseLeave={() => setIsHomeHovered(null)}
+                className="hover:text-red-600 transition-all duration-200 ease-linear"
+              >
+                Home
+                {isHomeHovered ? (
+                  <div className="px-1">
+                    <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
+                  </div>
+                ) : null}
+              </Link>
+
+              {/* About, Services, Contacts */}
               {navMenu.map((menu, menuKey) => (
                 <Link
                   key={menuKey}
@@ -173,6 +198,15 @@ export default function Navbar() {
 
               <div className="mb-4">
                 <div className="mt-8 whitespace-nowrap">
+                  {/* Home */}
+                  <div className="flex items-center justify-start gap-4">
+                    <div className="h-3 w-3 bg-[#DC2C2C]"></div>
+                    <Link href={"/"} onClick={() => setIsMenuToggle(false)}>
+                      Home
+                    </Link>
+                  </div>
+
+                  {/* About, Services, Contacts */}
                   {navMenu.map((mobileMenu, mobileMenuKey) => (
                     <div
                       key={mobileMenuKey}
@@ -190,6 +224,8 @@ export default function Navbar() {
                       </Link>
                     </div>
                   ))}
+
+                  {/* Featued Products */}
                   <div className="flex items-center justify-start gap-4">
                     <div className="h-3 w-3 bg-[#DC2C2C]"></div>
                     <Link
@@ -199,7 +235,7 @@ export default function Navbar() {
                       Featured Products
                     </Link>
                   </div>
-                  
+
                   <div className="flex items-center justify-start gap-4">
                     <div className="h-3 w-3 bg-[#DC2C2C]"></div>
                     <Link
@@ -214,7 +250,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex justify-between items-center gap-4">
-              <div className="h-[1px] w-full bg-red-600"></div>
+              <div className="h-[1px] w-full bg-text-[#DC2C2C]"></div>
               <div>
                 <Image
                   src={"/assets/logo.png"}
@@ -224,7 +260,7 @@ export default function Navbar() {
                   className="w-48"
                 />
               </div>
-              <div className="h-[1px] w-full bg-red-600"></div>
+              <div className="h-[1px] w-full bg--[#DC2C2C]"></div>
             </div>
 
             <div className="mt-8 p-4">
@@ -256,10 +292,6 @@ export default function Navbar() {
 }
 
 const navMenu = [
-  {
-    href: "#home",
-    name: "Home",
-  },
   {
     href: "#about",
     name: "About",

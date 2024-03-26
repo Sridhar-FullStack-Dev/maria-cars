@@ -15,6 +15,10 @@ body {
   cursor: default;
 }
 
+img {
+  pointer-events: none;
+}
+
 @font-face {
   font-family: ExtendedFont;
   src: url("../fonts/ExtendedFont.ttf");

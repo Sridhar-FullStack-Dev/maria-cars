@@ -1,12 +1,18 @@
 "use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { Poppins } from "next/font/google";
 import LatestProducts from "@/components/Mini Components/LatestProducts";
 
 // Icons
-import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { GoArrowUpRight } from "react-icons/go";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["700", "600", "500", "400", "300", "200", "100"],
+});
 
 export default function FeaturedProducts() {
   const [isHoveredFirst, setIsHoveredFirst] = useState(false);
@@ -15,12 +21,12 @@ export default function FeaturedProducts() {
 
   return (
     <main>
-      <section className="hero-font">
+      <section className="hero-font overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 1 }}
-          className="bg-[#DC2C2C] text-white text-center py-4 text-7xl"
+          className="bg-[#DC2C2C] text-white text-center py-4 sm:text-4xl md:text-7xl"
         >
           <h1>Featured Product</h1>
         </motion.div>
@@ -30,7 +36,7 @@ export default function FeaturedProducts() {
           <motion.div
             animate={{ x: "-100%" }}
             transition={{ repeat: Infinity, duration: 40, ease: "easeOut" }}
-            className="flex items-center gap-4 text-2xl text-[#DC2C2C] tracking-wider footer-font relative uppercase"
+            className="flex items-center gap-4 sm:text-xl md:text-2xl text-[#DC2C2C] tracking-wider footer-font relative uppercase"
           >
             {featuredMarquee.map((featuredMarquee1, featuredkey1) => (
               <div
@@ -42,7 +48,7 @@ export default function FeaturedProducts() {
                   alt=""
                   height={20}
                   width={20}
-                  className="h-8 w-8 ml-8"
+                  className="sm:h-7 md:h-8 sm:w-7 md:w-8 sm:ml-7 md:ml-8"
                 />
                 {featuredMarquee1.content}
               </div>
@@ -57,7 +63,7 @@ export default function FeaturedProducts() {
                   alt=""
                   height={20}
                   width={20}
-                  className="h-8 w-8 ml-8"
+                  className="sm:h-7 md:h-8 sm:w-7 md:w-8 sm:ml-7 md:ml-8"
                 />
                 {featuredMarquee2.content}
               </div>
@@ -72,7 +78,7 @@ export default function FeaturedProducts() {
                   alt=""
                   height={20}
                   width={20}
-                  className="h-8 w-8 ml-8"
+                  className="sm:h-7 md:h-8 sm:w-7 md:w-8 sm:ml-7 md:ml-8"
                 />
                 {featuredMarquee3.content}
               </div>
@@ -80,166 +86,410 @@ export default function FeaturedProducts() {
           </motion.div>
         </div>
 
-        <div className="py-8 footer-font">
+        <div className="sm:px-8 md:px-0 py-8 footer-font">
           <LatestProducts />
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ ease: "easeInOut", duration: 1 }}
-        >
-          <h1 className="text-center text-7xl text-[#DC2C2C]">
-            Products categories
-          </h1>
-        </motion.div>
+        {/* Products Category */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ ease: "easeInOut", duration: 1 }}
+          >
+            <h1 className="text-center sm:text-4xl md:text-7xl text-[#DC2C2C]">
+              Products categories
+            </h1>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, width: 0 }}
-          whileInView={{ opacity: 1, width: "100%" }}
-          transition={{ ease: "easeInOut", duration: 1 }}
-          className="h-1 bg-[#DC2C2C] mb-4 mt-8"
-        ></motion.div>
+          <motion.div
+            initial={{ opacity: 0, width: 0 }}
+            whileInView={{ opacity: 1, width: "100%" }}
+            transition={{ ease: "easeInOut", duration: 1 }}
+            className="h-1 bg-[#DC2C2C] mb-4 sm:mt-4 md:mt-8"
+          ></motion.div>
 
-        <div className="p-8 footer-font">
-          <div className="flex w-full justify-center items-center gap-4">
-            <motion.div
-              initial={{ width: "20vw" }}
-              whileHover={{ width: "40vw" }}
-              transition={{ ease: "easeInOut", duration: 0.3 }}
-              onMouseEnter={() => setIsHoveredFirst(true)}
-              onMouseLeave={() => setIsHoveredFirst(false)}
-              className="p-4 bg-[#DC2C2C] overflow-hidden text-white h-96 whitespace-nowrap"
-            >
-              <div className="flex justify-between items-center gap-4">
-                <h1>Imported Horns</h1>
-                {isHoveredFirst && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.3 }}
-                    className="flex justify-center items-center gap-1"
+          <div className="p-8 footer-font">
+            <div className="flex sm:flex-col md:flex-row w-full justify-center items-center gap-4">
+              <motion.div
+                onMouseEnter={() => setIsHoveredFirst(true)}
+                onMouseLeave={() => setIsHoveredFirst(false)}
+                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                  isHoveredFirst ? "md:w-[40rem]" : "md:w-72"
+                }`}
+              >
+                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
+                  <h1 className="sm:text-[10px] md:text-base">
+                    Imported Horns
+                  </h1>
+
+                  <div
+                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
+                      isHoveredFirst ? "md:flex" : "md:hidden"
+                    }`}
                   >
-                    <div className="text-[12px] flex items-center justify-center gap-2">
+                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
                       for more{" "}
                       <Image
                         src={"/assets/ft-products/arrow.svg"}
                         alt=""
                         height={500}
                         width={500}
-                        className="w-9"
+                        className="sm:w-5 md:w-9"
                       />
                     </div>
                     <Link
                       href={"tel:+919443041599"}
-                      className="bg-[#DC2C2C] px-3 py-2 text-white sm:text-[8px] md:text-[12px] rounded-full hover:bg-red-500 transition-all ease-linear duration-150"
+                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
                     >
                       Call now
                     </Link>
-                  </motion.div>
-                )}
-              </div>
+                  </div>
+                </div>
 
-              <div>
-                <Image
-                  src={
-                    "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  }
-                  alt=""
-                  height={1000}
-                  width={1000}
-                  className="w-72"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ width: "20vw" }}
-              whileHover={{ width: "40vw" }}
-              transition={{ ease: "easeInOut", duration: 0.3 }}
-              onMouseEnter={() => setIsHoveredSecond(true)}
-              onMouseLeave={() => setIsHoveredSecond(false)}
-              className="p-4 bg-[#DC2C2C] overflow-hidden text-white h-96 whitespace-nowrap"
-            >
-              <div className="flex justify-between items-center gap-4">
-                <h1>Imported Horns</h1>
-                {isHoveredSecond && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.3 }}
-                    className="flex justify-center items-center gap-1"
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                  <Image
+                    src={
+                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    }
+                    alt=""
+                    height={1000}
+                    width={1000}
+                    className="sm:w-40 md:w-72"
+                  />
+                  <p
+                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
                   >
-                    <div className="text-[12px] flex items-center justify-center gap-1">
-                      for more <MdOutlineArrowRightAlt className="text-3xl" />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit dolor minima sapiente pariatur, officiis vitae
+                    voluptatem sunt sequi velit molestias iusto inventore, error
+                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                onMouseEnter={() => setIsHoveredSecond(true)}
+                onMouseLeave={() => setIsHoveredSecond(false)}
+                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                  isHoveredSecond ? "md:w-[40rem]" : "md:w-72"
+                }`}
+              >
+                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
+                  <h1 className="sm:text-[10px] md:text-base">
+                    Imported Horns
+                  </h1>
+
+                  <div
+                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
+                      isHoveredSecond ? "md:flex" : "md:hidden"
+                    }`}
+                  >
+                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
+                      for more{" "}
+                      <Image
+                        src={"/assets/ft-products/arrow.svg"}
+                        alt=""
+                        height={500}
+                        width={500}
+                        className="sm:w-5 md:w-9"
+                      />
                     </div>
                     <Link
                       href={"tel:+919443041599"}
-                      className="bg-[#DC2C2C] px-3 py-2 text-white sm:text-[8px] md:text-[12px] rounded-full hover:bg-red-500 transition-all ease-linear duration-150"
+                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
                     >
                       Call now
                     </Link>
-                  </motion.div>
-                )}
-              </div>
+                  </div>
+                </div>
 
-              <div>
-                <Image
-                  src={
-                    "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  }
-                  alt=""
-                  height={300}
-                  width={300}
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ width: "20vw" }}
-              whileHover={{ width: "40vw" }}
-              transition={{ ease: "easeInOut", duration: 0.3 }}
-              onMouseEnter={() => setIsHoveredThird(true)}
-              onMouseLeave={() => setIsHoveredThird(false)}
-              className="p-4 bg-[#DC2C2C] overflow-hidden text-white h-96 whitespace-nowrap"
-            >
-              <div className="flex justify-between items-center gap-4">
-                <h1>Imported Horns</h1>
-                {isHoveredThird && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ ease: "easeInOut", duration: 0.3 }}
-                    className="flex justify-center items-center gap-1"
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                  <Image
+                    src={
+                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    }
+                    alt=""
+                    height={1000}
+                    width={1000}
+                    className="sm:w-40 md:w-72"
+                  />
+                  <p
+                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
                   >
-                    <div className="text-[12px] flex items-center justify-center gap-1">
-                      for more <MdOutlineArrowRightAlt className="text-3xl" />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit dolor minima sapiente pariatur, officiis vitae
+                    voluptatem sunt sequi velit molestias iusto inventore, error
+                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                onMouseEnter={() => setIsHoveredThird(true)}
+                onMouseLeave={() => setIsHoveredThird(false)}
+                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                  isHoveredThird ? "md:w-[40rem]" : "md:w-72"
+                }`}
+              >
+                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
+                  <h1 className="sm:text-[10px] md:text-base">
+                    Imported Horns
+                  </h1>
+
+                  <div
+                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
+                      isHoveredThird ? "md:flex" : "md:hidden"
+                    }`}
+                  >
+                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
+                      for more{" "}
+                      <Image
+                        src={"/assets/ft-products/arrow.svg"}
+                        alt=""
+                        height={500}
+                        width={500}
+                        className="sm:w-5 md:w-9"
+                      />
                     </div>
                     <Link
                       href={"tel:+919443041599"}
-                      className="bg-[#DC2C2C] px-3 py-2 text-white sm:text-[8px] md:text-[12px] rounded-full hover:bg-red-500 transition-all ease-linear duration-150"
+                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
                     >
                       Call now
                     </Link>
-                  </motion.div>
-                )}
-              </div>
+                  </div>
+                </div>
 
-              <div>
-                <Image
-                  src={
-                    "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  }
-                  alt=""
-                  height={300}
-                  width={300}
-                />
-              </div>
-            </motion.div>
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                  <Image
+                    src={
+                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    }
+                    alt=""
+                    height={1000}
+                    width={1000}
+                    className="sm:w-40 md:w-72"
+                  />
+                  <p
+                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit dolor minima sapiente pariatur, officiis vitae
+                    voluptatem sunt sequi velit molestias iusto inventore, error
+                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                  </p>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
 
-        <div></div>
+        {/* Latest Products */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ ease: "easeInOut", duration: 1 }}
+          >
+            <h1 className="text-center sm:text-4xl md:text-7xl text-[#DC2C2C]">
+              Latest products
+            </h1>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, width: 0 }}
+            whileInView={{ opacity: 1, width: "100%" }}
+            transition={{ ease: "easeInOut", duration: 1 }}
+            className="h-1 bg-[#DC2C2C] mb-4 sm:mt-4 md:mt-8"
+          ></motion.div>
+
+          <div className="p-8 footer-font">
+            <div className="flex sm:flex-col md:flex-row w-full justify-center items-center gap-4">
+              <motion.div
+                onMouseEnter={() => setIsHoveredFirst(true)}
+                onMouseLeave={() => setIsHoveredFirst(false)}
+                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                  isHoveredFirst ? "md:w-[40rem]" : "md:w-72"
+                }`}
+              >
+                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
+                  <h1 className="sm:text-[10px] md:text-base">
+                    Imported Horns
+                  </h1>
+
+                  <div
+                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
+                      isHoveredFirst ? "md:flex" : "md:hidden"
+                    }`}
+                  >
+                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
+                      for more{" "}
+                      <Image
+                        src={"/assets/ft-products/arrow.svg"}
+                        alt=""
+                        height={500}
+                        width={500}
+                        className="sm:w-5 md:w-9"
+                      />
+                    </div>
+                    <Link
+                      href={"tel:+919443041599"}
+                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
+                    >
+                      Call now
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                  <Image
+                    src={
+                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    }
+                    alt=""
+                    height={1000}
+                    width={1000}
+                    className="sm:w-40 md:w-72"
+                  />
+                  <p
+                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit dolor minima sapiente pariatur, officiis vitae
+                    voluptatem sunt sequi velit molestias iusto inventore, error
+                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                onMouseEnter={() => setIsHoveredSecond(true)}
+                onMouseLeave={() => setIsHoveredSecond(false)}
+                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                  isHoveredSecond ? "md:w-[40rem]" : "md:w-72"
+                }`}
+              >
+                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
+                  <h1 className="sm:text-[10px] md:text-base">
+                    Imported Horns
+                  </h1>
+
+                  <div
+                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
+                      isHoveredSecond ? "md:flex" : "md:hidden"
+                    }`}
+                  >
+                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
+                      for more{" "}
+                      <Image
+                        src={"/assets/ft-products/arrow.svg"}
+                        alt=""
+                        height={500}
+                        width={500}
+                        className="sm:w-5 md:w-9"
+                      />
+                    </div>
+                    <Link
+                      href={"tel:+919443041599"}
+                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
+                    >
+                      Call now
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                  <Image
+                    src={
+                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    }
+                    alt=""
+                    height={1000}
+                    width={1000}
+                    className="sm:w-40 md:w-72"
+                  />
+                  <p
+                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit dolor minima sapiente pariatur, officiis vitae
+                    voluptatem sunt sequi velit molestias iusto inventore, error
+                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                onMouseEnter={() => setIsHoveredThird(true)}
+                onMouseLeave={() => setIsHoveredThird(false)}
+                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                  isHoveredThird ? "md:w-[40rem]" : "md:w-72"
+                }`}
+              >
+                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
+                  <h1 className="sm:text-[10px] md:text-base">
+                    Imported Horns
+                  </h1>
+
+                  <div
+                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
+                      isHoveredThird ? "md:flex" : "md:hidden"
+                    }`}
+                  >
+                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
+                      for more{" "}
+                      <Image
+                        src={"/assets/ft-products/arrow.svg"}
+                        alt=""
+                        height={500}
+                        width={500}
+                        className="sm:w-5 md:w-9"
+                      />
+                    </div>
+                    <Link
+                      href={"tel:+919443041599"}
+                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
+                    >
+                      Call now
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                  <Image
+                    src={
+                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    }
+                    alt=""
+                    height={1000}
+                    width={1000}
+                    className="sm:w-40 md:w-72"
+                  />
+                  <p
+                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit dolor minima sapiente pariatur, officiis vitae
+                    voluptatem sunt sequi velit molestias iusto inventore, error
+                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* End */}
+        <div className="sm:text-2xl md:text-3xl text-center mb-4">
+          For more{" "}
+          <Link
+            href={"tel:+919443041599"}
+            className="text-[#DC2C2C] flex items-center justify-center gap-4"
+          >
+            Contact us <GoArrowUpRight className="text-5xl" />
+          </Link>
+        </div>
       </section>
     </main>
   );

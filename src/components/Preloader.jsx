@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function Preloader() {
