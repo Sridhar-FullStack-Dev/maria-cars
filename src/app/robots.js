@@ -12,6 +12,6 @@ export default function robots() {
         disallow: ["/private/"],
       },
     ],
-    sitemap: "https://maria-cars.vercel.app/sitemap.xml",
+    sitemap: "https://maria-cars.com/sitemap.xml",
   };
 }

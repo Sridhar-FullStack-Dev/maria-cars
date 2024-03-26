@@ -15,19 +15,19 @@ export const metadata = {
     "Maria Cars provides high-quality car fitting services. We are a reliable auto modification and fitting shop offering affordable plans and offers. Visit us for the best car fitting near you and our company is situated in Thoothukudi.",
   openGraph: {
     type: "website",
-    url: "https://maria-cars.vercel.app",
+    url: "https://maria-cars.com",
     title: "Maria Cars | Home - Best Car Fitting Services In Thoothukudi",
     description:
       "Maria Cars provides high-quality car fitting services. We are a reliable auto modification and fitting shop offering affordable plans and offers. Visit us for the best car fitting near you and our company is situated in Thoothukudi.",
     images: [
       {
-        url: "https://maria-cars.vercel.app/favicon.ico",
+        url: "https://maria-cars.com/favicon.ico",
         width: 800,
         height: 600,
         alt: "logo",
       },
     ],
-    site_name: "Maria Cars",
+    site_name: "Maria Cars - Best Car Fitting Services In Thoothukudi",
   },
 };
 
