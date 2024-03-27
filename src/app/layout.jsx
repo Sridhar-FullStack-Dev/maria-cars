@@ -3,6 +3,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,12 +40,23 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="hVkKiZkjc_fsboNJr30P7zyl9ol28yApUVsIw4epA-A"
         />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-RXNTCD26MP"
+        ></Script>
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RXNTCD26MP');
+        `}
+        </Script>
       </head>
       <body className={`${poppins.className} antialiased`}>
         <Navbar />
         <SmoothScroll>
           {children}
-
           <Footer />
         </SmoothScroll>
       </body>
