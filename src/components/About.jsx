@@ -67,7 +67,9 @@ export default function About() {
                 width={200}
                 className="sm:h-5 md:h-7 sm:w-5 md:w-7"
               />
-              <div className="sm:text-xl md:text-3xl">{aboutHeaders.heading}&nbsp;</div>
+              <div className="sm:text-xl md:text-3xl">
+                {aboutHeaders.heading}&nbsp;
+              </div>
             </div>
           ))}
         </div>
@@ -88,7 +90,9 @@ export default function About() {
                 width={200}
                 className="sm:h-5 md:h-7 sm:w-5 md:w-7"
               />
-              <div className="sm:text-xl md:text-3xl">{aboutHeaders2.heading}&nbsp;</div>
+              <div className="sm:text-xl md:text-3xl">
+                {aboutHeaders2.heading}&nbsp;
+              </div>
             </div>
           ))}
         </div>
@@ -114,9 +118,7 @@ export default function About() {
           transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
         >
           <Image
-            src={
-              "https://images.pexels.com/photos/20108517/pexels-photo-20108517/free-photo-of-landscape-fashion-man-love.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            }
+            src={"/assets/about/about-1.jpg"}
             alt=""
             height={6000}
             width={4000}
@@ -130,9 +132,7 @@ export default function About() {
           transition={{ ease: "easeInOut", duration: 2, delay: 2 }}
         >
           <Image
-            src={
-              "https://images.pexels.com/photos/20108517/pexels-photo-20108517/free-photo-of-landscape-fashion-man-love.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            }
+            src={"/assets/about/about-2.jpg"}
             alt=""
             height={6000}
             width={4000}

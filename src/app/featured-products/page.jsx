@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Poppins } from "next/font/google";
-import LatestProducts from "@/components/Mini Components/LatestProducts";
+import LatestProducts from "@/components/Mini Components/FeaturedProduct";
 
 // Icons
 import { GoArrowUpRight } from "react-icons/go";
@@ -20,7 +20,7 @@ export default function FeaturedProducts() {
   const [isHoveredThird, setIsHoveredThird] = useState(false);
 
   const [isLatestFirst, setIsLatestFirst] = useState(false);
-  const [isLatestSecond, setIsLatestSecond] = useState(false);
+  const [isLatestSecond, setIsLatestSecond] = useState(null);
   const [isLatestThird, setIsLatestThird] = useState(false);
 
   return (
@@ -309,177 +309,122 @@ export default function FeaturedProducts() {
           ></motion.div>
 
           <div className="p-8 footer-font">
-            <div className="flex sm:flex-col md:flex-row w-full justify-center items-center gap-4">
-              <motion.div
-                onMouseEnter={() => setIsLatestFirst(true)}
-                onMouseLeave={() => setIsLatestFirst(false)}
-                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
-                  isLatestFirst ? "md:w-[40rem]" : "md:w-72"
-                }`}
-              >
-                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
-                  <h1 className="sm:text-[10px] md:text-base">
-                    Imported Horns
-                  </h1>
+            {/* Latest Products 1 */}
+            <div className="flex sm:flex-col md:flex-row w-full justify-center items-center gap-4 mt-8">
+              {latestProductsList1.map((LatestProduct1, LatestProductKey1) => (
+                <div
+                  key={LatestProductKey1}
+                  onMouseEnter={() => setIsLatestFirst(LatestProductKey1)}
+                  onMouseLeave={() => setIsLatestFirst(null)}
+                >
+                  <div className="p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-72 sm:w-72 transition-all ease-in-out duration-500 md:w-72 hover:md:w-[40rem]">
+                    <div className="flex justify-between items-center gap-4 whitespace-nowrap">
+                      <h1 className="sm:text-[10px] md:text-base">
+                        {LatestProduct1.productName}
+                      </h1>
 
-                  <div
-                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
-                      isLatestFirst ? "md:flex" : "md:hidden"
-                    }`}
-                  >
-                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
-                      for more{" "}
-                      <Image
-                        src={"/assets/ft-products/arrow.svg"}
-                        alt=""
-                        height={500}
-                        width={500}
-                        className="sm:w-5 md:w-9"
-                      />
+                      <div
+                        className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
+                          isLatestFirst === LatestProductKey1
+                            ? "md:flex"
+                            : "md:hidden"
+                        }`}
+                      >
+                        <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
+                          for more{" "}
+                          <Image
+                            src={"/assets/ft-products/arrow.svg"}
+                            alt=""
+                            height={500}
+                            width={500}
+                            className="sm:w-5 md:w-9"
+                          />
+                        </div>
+                        <Link
+                          href={"tel:+919443041599"}
+                          className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
+                        >
+                          Call now
+                        </Link>
+                      </div>
                     </div>
-                    <Link
-                      href={"tel:+919443041599"}
-                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
-                    >
-                      Call now
-                    </Link>
+
+                    <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                      <Image
+                        src={`/assets/ft-products/${LatestProduct1.src}`}
+                        alt=""
+                        height={1000}
+                        width={1000}
+                        className="sm:w-40 md:w-72"
+                      />
+                      <p
+                        className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
+                      >
+                        {LatestProduct1.productDetails}
+                      </p>
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
 
-                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
-                  <Image
-                    src={
-                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    }
-                    alt=""
-                    height={1000}
-                    width={1000}
-                    className="sm:w-40 md:w-72"
-                  />
-                  <p
-                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit dolor minima sapiente pariatur, officiis vitae
-                    voluptatem sunt sequi velit molestias iusto inventore, error
-                    consequatur vero quidem omnis quisquam recusandae aperiam?
-                  </p>
-                </div>
-              </motion.div>
+            {/* Latest Products 2 */}
+            <div className="flex sm:flex-col md:flex-row w-full justify-center items-center gap-4 mt-8">
+              {latestProductsList2.map((LatestProduct2, LatestProductKey2) => (
+                <div
+                  key={LatestProductKey2}
+                  onMouseEnter={() => setIsLatestSecond(LatestProductKey2)}
+                  onMouseLeave={() => setIsLatestSecond(null)}
+                >
+                  <div className="p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-72 sm:w-72 transition-all ease-in-out duration-500 md:w-72 hover:md:w-[40rem]">
+                    <div className="flex justify-between items-center gap-4 whitespace-nowrap">
+                      <h1 className="sm:text-[10px] md:text-base">
+                        {LatestProduct2.productName}
+                      </h1>
 
-              <motion.div
-                onMouseEnter={() => setIsLatestSecond(true)}
-                onMouseLeave={() => setIsLatestSecond(false)}
-                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
-                  isLatestSecond ? "md:w-[40rem]" : "md:w-72"
-                }`}
-              >
-                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
-                  <h1 className="sm:text-[10px] md:text-base">
-                    Imported Horns
-                  </h1>
-
-                  <div
-                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
-                      isLatestSecond ? "md:flex" : "md:hidden"
-                    }`}
-                  >
-                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
-                      for more{" "}
-                      <Image
-                        src={"/assets/ft-products/arrow.svg"}
-                        alt=""
-                        height={500}
-                        width={500}
-                        className="sm:w-5 md:w-9"
-                      />
+                      <div
+                        className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
+                          isLatestSecond === LatestProductKey2
+                            ? "md:flex"
+                            : "md:hidden"
+                        }`}
+                      >
+                        <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
+                          for more{" "}
+                          <Image
+                            src={"/assets/ft-products/arrow.svg"}
+                            alt=""
+                            height={500}
+                            width={500}
+                            className="sm:w-5 md:w-9"
+                          />
+                        </div>
+                        <Link
+                          href={"tel:+919443041599"}
+                          className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
+                        >
+                          Call now
+                        </Link>
+                      </div>
                     </div>
-                    <Link
-                      href={"tel:+919443041599"}
-                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
-                    >
-                      Call now
-                    </Link>
+
+                    <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                      <Image
+                        src={`/assets/ft-products/${LatestProduct2.src}`}
+                        alt=""
+                        height={1000}
+                        width={1000}
+                        className="sm:w-40 md:w-72"
+                      />
+                      <p
+                        className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
+                      >
+                        {LatestProduct2.productDetails}
+                      </p>
+                    </div>
                   </div>
                 </div>
-
-                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
-                  <Image
-                    src={
-                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    }
-                    alt=""
-                    height={1000}
-                    width={1000}
-                    className="sm:w-40 md:w-72"
-                  />
-                  <p
-                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit dolor minima sapiente pariatur, officiis vitae
-                    voluptatem sunt sequi velit molestias iusto inventore, error
-                    consequatur vero quidem omnis quisquam recusandae aperiam?
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                onMouseEnter={() => setIsLatestThird(true)}
-                onMouseLeave={() => setIsLatestThird(false)}
-                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
-                  isLatestThird ? "md:w-[40rem]" : "md:w-72"
-                }`}
-              >
-                <div className="flex justify-between items-center gap-4 whitespace-nowrap">
-                  <h1 className="sm:text-[10px] md:text-base">
-                    Imported Horns
-                  </h1>
-
-                  <div
-                    className={`flex justify-center items-center gap-1 transition-all ease-in-out duration-500 ${
-                      isLatestThird ? "md:flex" : "md:hidden"
-                    }`}
-                  >
-                    <div className="sm:text-[8px] md:text-xs flex items-center justify-center gap-2">
-                      for more{" "}
-                      <Image
-                        src={"/assets/ft-products/arrow.svg"}
-                        alt=""
-                        height={500}
-                        width={500}
-                        className="sm:w-5 md:w-9"
-                      />
-                    </div>
-                    <Link
-                      href={"tel:+919443041599"}
-                      className="px-3 py-2 text-white sm:text-[8px] md:text-[12px]"
-                    >
-                      Call now
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
-                  <Image
-                    src={
-                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    }
-                    alt=""
-                    height={1000}
-                    width={1000}
-                    className="sm:w-40 md:w-72"
-                  />
-                  <p
-                    className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
-                  >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit dolor minima sapiente pariatur, officiis vitae
-                    voluptatem sunt sequi velit molestias iusto inventore, error
-                    consequatur vero quidem omnis quisquam recusandae aperiam?
-                  </p>
-                </div>
-              </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -523,5 +468,47 @@ const featuredMarquee = [
   },
   {
     content: "SALE",
+  },
+];
+
+const latestProductsList1 = [
+  {
+    productName: "Chrome Horn",
+    src: "horn-chrome.jpg",
+    productDetails:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+  },
+  {
+    productName: "Imported Horn - Germany",
+    src: "horn-germany.jpg",
+    productDetails:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+  },
+  {
+    productName: "Hella Horn",
+    src: "horn-hella.jpg",
+    productDetails:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+  },
+];
+
+const latestProductsList2 = [
+  {
+    productName: "Rat Protection",
+    src: "rat-protection.jpg",
+    productDetails:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+  },
+  {
+    productName: "Cool Stuffs",
+    src: "stuff-cool-1.jpg",
+    productDetails:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+  },
+  {
+    productName: "LED Lasers",
+    src: "laser-led.jpg",
+    productDetails:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
   },
 ];
