@@ -1,8 +1,7 @@
-"use client";
-import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
-import SwiperJS from "./Mini Components/SwiperJS";
+import { useEffect, useRef } from "react";
+import ServicesSwiper from "./Mini Components/ServicesSwiper";
 
 export default function Services() {
   const ref1 = useRef(null);
@@ -151,14 +150,15 @@ export default function Services() {
       id="services"
       className="px-8 py-16 rounded-3xl text-white overflow-hidden"
     >
-      <div className="flex sm:flex-col md:flex-row justify-between items-start gap-8">
-        <div className="w-1/3">
+      <div className="flex sm:flex-col md:flex-row justify-between sm:items-start md:items-center xl:items-start gap-8 lg:gap-8">
+        {/* Heading */}
+        <div className="sm:w-1/3 md:w-1/2 xl:w-1/3">
           <div>
             <motion.h1
               initial={{ opacity: 0, x: "-20px" }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
-              className="hero-font sm:text-4xl md:text-5xl"
+              className="hero-font sm:text-4xl lg:text-5xl"
             >
               Services.
             </motion.h1>
@@ -167,7 +167,7 @@ export default function Services() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ ease: "easeInOut", duration: 1, delay: 2 }}
-              className="mt-1 h-1 sm:w-72 md:w-96 bg-white"
+              className="mt-1 h-1 sm:w-72 lg:w-96 bg-white"
             ></motion.div>
           </div>
 
@@ -175,7 +175,7 @@ export default function Services() {
             initial={{ opacity: 0, x: "-20px" }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ ease: "easeInOut", duration: 1, delay: 2 }}
-            className="mt-8 sm:w-72 md:w-96 sm:text-xs md:text-sm text-justify"
+            className="mt-8 sm:w-72 lg:w-96 sm:text-xs lg:text-sm text-justify"
           >
             We provide all types of fitting services for your car in a world
             class standards and we install stunning aesthetic elements,
@@ -185,13 +185,15 @@ export default function Services() {
           </motion.p>
         </div>
 
-        <div className="sm:w-full md:w-2/3">
-          <SwiperJS />
+        {/* Swipers */}
+        <div className="sm:w-full md:w-1/2 xl:w-2/3">
+          <ServicesSwiper />
         </div>
       </div>
 
+      {/* Counters */}
       <div className="mt-8 p-8 w-full bg-white text-red-600 flex justify-between items-center rounded-2xl">
-        <div className="flex sm:flex-col md:flex-row items-center justify-evenly w-full gap-4 hero-font sm:text-3xl md:text-6xl">
+        <div className="flex sm:flex-col md:flex-row sm:items-center md:items-start justify-evenly w-full gap-4 hero-font sm:text-3xl xl:text-6xl">
           <div className="w-60 overflow-hidden">
             <div ref={ref1} className="text-center">
               0 +
@@ -219,7 +221,7 @@ export default function Services() {
             <div ref={ref4} className="text-center">
               0 +
             </div>
-            <p className="text-sm w-full text-center py-4">
+            <p className="sm:text-sm lg:text-sm w-full text-center py-4">
               Cars Serviced / Month
             </p>
           </div>

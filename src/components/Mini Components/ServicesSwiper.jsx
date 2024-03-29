@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import { Autoplay, FreeMode, Pagination } from "swiper/modules";
 import Image from "next/image";
 
-export default function SwiperJS() {
+export default function ServicesSwiper() {
   return (
     <>
       <Swiper
@@ -26,19 +26,18 @@ export default function SwiperJS() {
         breakpoints={{
           200: {
             slidesPerView: 2,
-            spaceBetween: 10,
           },
           640: {
             slidesPerView: 2,
-            spaceBetween: 10,
           },
           768: {
             slidesPerView: 2,
-            spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 4,
-            spaceBetween: 10,
+            slidesPerView: 3,
+          },
+          1440: {
+            slidesPerView: 3,
           },
         }}
         className="mySwiper rounded-xl"
@@ -51,10 +50,12 @@ export default function SwiperJS() {
                 alt={service.name}
                 height={1000}
                 width={1000}
-                className="sm:h-32 md:h-52 sm:w-32 md:w-52 pointer-events-none object-cover rounded-lg"
+                className="sm:h-32 md:h-40 lg:h-32 xl:h-52 sm:w-32 md:w-40 lg:w-32 xl:w-52 pointer-events-none object-cover rounded-lg"
               />
 
-              <p className="text-center sm:w-32 md:w-52 sm:text-xs md:text-sm mt-4">{service.name}</p>
+              <p className="text-center sm:w-32 md:w-40 lg:w-32 xl:w-52 sm:text-xs xl:text-sm mt-4">
+                {service.name}
+              </p>
             </div>
           </SwiperSlide>
         ))}

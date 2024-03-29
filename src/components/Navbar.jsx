@@ -79,7 +79,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="flex justify-center items-center sm:hidden md:flex">
+          {/* MenuItems */}
+          <div className="flex justify-center items-center sm:hidden lg:flex">
             <div className="flex items-center justify-between gap-4">
               {/* Home */}
               <Link
@@ -150,7 +151,8 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="sm:hidden md:flex items-center justify-center gap-4">
+          {/* Contact & Feedback */}
+          <div className="sm:hidden lg:flex items-center justify-center gap-4">
             <Link
               href={"tel:+919443041599"}
               className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white sm:text-[8px] md:text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150"
@@ -169,8 +171,9 @@ export default function Navbar() {
             </Link>
           </div>
 
+          {/* Hamburger */}
           <div
-            className="text-[#DC2C2C] text-2xl md:hidden"
+            className="text-[#DC2C2C] text-2xl lg:hidden"
             onClick={() => setIsMenuToggle(!isMenuToggle)}
           >
             <CiMenuFries />
@@ -186,7 +189,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ ease: "easeInOut", duration: 0.8 }}
-            className="hero-font fixed top-0 right-0 w-full h-screen text-[#DC2C2C] bg-white z-[999] md:hidden"
+            className="hero-font fixed top-0 right-0 w-full h-screen text-[#DC2C2C] bg-white z-[999] lg:hidden"
           >
             <div className="p-6">
               <div className="flex justify-between items-center">
@@ -237,6 +240,7 @@ export default function Navbar() {
                     </Link>
                   </div>
 
+                  {/* Feedback */}
                   <div className="flex items-center justify-start gap-4">
                     <div className="h-3 w-3 bg-[#DC2C2C]"></div>
                     <Link
@@ -251,7 +255,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex justify-between items-center gap-4">
-              <div className="h-[1px] w-full bg-text-[#DC2C2C]"></div>
+              <div className="h-[1px] w-full bg-[#DC2C2C]"></div>
               <div>
                 <Image
                   src={"/assets/logo.png"}
@@ -261,7 +265,7 @@ export default function Navbar() {
                   className="w-48"
                 />
               </div>
-              <div className="h-[1px] w-full bg--[#DC2C2C]"></div>
+              <div className="h-[1px] w-full bg-[#DC2C2C]"></div>
             </div>
 
             <div className="mt-8 p-4">

@@ -30,7 +30,7 @@ export default function Popup() {
                 <h1 className="sm:text-xl md:text-3xl mb-4 text-center footer-font">
                   Help us improve
                 </h1>
-                <p className="sm:w-64 md:w-96 text-center">
+                <p className="sm:w-64 lg:w-96 text-center">
                   We need your valuable feedback to improve our fitting service!
                 </p>
 

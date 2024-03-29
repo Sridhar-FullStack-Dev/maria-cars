@@ -51,85 +51,33 @@ export default function Contacts() {
           </div>
         </div>
 
-        <div className="md:w-2/3 flex sm:flex-col md:flex-row justify-between items-start sm:gap-4 md:gap-0">
-          <div className="w-64 overflow-hidden">
-            <motion.div
-              initial={{
-                background: "#FFF",
-                color: "#DC2C2C",
-                border: "1px solid #DC2C2C",
-              }}
-              whileHover={{
-                background: "#DC2C2C",
-                color: "#FFF",
-                border: "1px solid #FFF",
-              }}
-              transition={{ ease: "easeInOut", duration: 0.3 }}
-              className="p-4"
-            >
-              <Link
-                href={
-                  "https://www.instagram.com/mariacars_tuty?igsh=MTIxNTdpdjIyMXRtcA=="
-                }
-                className="flex justify-center items-center gap-4"
+        <div className="md:w-2/3 flex sm:flex-col md:flex-row justify-between items-start sm:gap-4 md:gap-0 sm:text-base md:text-xs lg:text-balance">
+          {contactLinks.map((contactLink, contactLinkKey) => (
+            <div key={contactLinkKey} className="w-64 overflow-hidden">
+              <motion.div
+                initial={{
+                  background: "#FFF",
+                  color: "#DC2C2C",
+                  border: "1px solid #DC2C2C",
+                }}
+                whileHover={{
+                  background: "#DC2C2C",
+                  color: "#FFF",
+                  border: "1px solid #FFF",
+                }}
+                transition={{ ease: "easeInOut", duration: 0.3 }}
+                className="p-4"
               >
-                <SiInstagram className="text-3xl" />
-                <p>Instagram</p>
-              </Link>
-            </motion.div>
-          </div>
-
-          <div className="w-64 overflow-hidden">
-            <motion.div
-              initial={{
-                background: "#FFF",
-                color: "#DC2C2C",
-                border: "1px solid #DC2C2C",
-              }}
-              whileHover={{
-                background: "#DC2C2C",
-                color: "#FFF",
-                border: "1px solid #FFF",
-              }}
-              transition={{ ease: "easeInOut", duration: 0.3 }}
-              className="p-4"
-            >
-              <Link
-                href={
-                  "https://www.facebook.com/profile.php?id=61557471537791&mibextid=ZbWKwL"
-                }
-                className="flex justify-center items-center gap-4"
-              >
-                <SiFacebook className="text-3xl" />
-                <p>Facebook</p>
-              </Link>
-            </motion.div>
-          </div>
-
-          <div className="w-64 overflow-hidden">
-            <motion.div
-              initial={{
-                background: "#FFF",
-                color: "#DC2C2C",
-                border: "1px solid #DC2C2C",
-              }}
-              whileHover={{
-                background: "#DC2C2C",
-                color: "#FFF",
-                border: "1px solid #FFF",
-              }}
-              transition={{ ease: "easeInOut", duration: 0.3 }}
-              className="p-4"
-            >
-              <Link
-                href={"tel:+919443041599"}
-                className="flex justify-center items-center gap-4"
-              >
-                <IoCallOutline className="text-3xl" />
-                <p>Call us</p>
-              </Link>
-            </motion.div>
-          </div>
+                <Link
+                  href={contactLink.href}
+                  className="flex justify-center items-center gap-4"
+                >
+                  <contactLink.icon className="text-3xl md:hidden lg:block" />
+                  <p>{contactLink.name}</p>
+                </Link>
+              </motion.div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -142,7 +90,7 @@ export default function Contacts() {
           style={{ border: 0 }}
           allowFullScreen={true}
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
           className="w-full h-80 rounded-3xl object-cover"
         ></iframe>
       </div>
@@ -223,5 +171,23 @@ const contactMarquee = [
   },
   {
     content: "Maria Cars",
+  },
+];
+
+const contactLinks = [
+  {
+    href: "https://www.instagram.com/mariacars_tuty?igsh=MTIxNTdpdjIyMXRtcA==",
+    icon: SiInstagram,
+    name: "Instagram",
+  },
+  {
+    href: "https://www.facebook.com/profile.php?id=61557471537791&mibextid=ZbWKwL",
+    icon: SiFacebook,
+    name: "Facebook",
+  },
+  {
+    href: "tel:+919443041599",
+    icon: IoCallOutline,
+    name: "Call us",
   },
 ];
