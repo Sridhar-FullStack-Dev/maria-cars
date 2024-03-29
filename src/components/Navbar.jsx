@@ -161,6 +161,7 @@ export default function Navbar() {
 
             <Link
               href={"https://forms.office.com/r/x2rmNmLSQ7"}
+              target="_blank"
               className="bg-red-600 px-3 py-2 flex items-center justify-center gap-2 text-white sm:text-[8px] md:text-[14px] rounded-full hover:bg-red-400 transition-all ease-linear duration-150"
             >
               <VscFeedback />

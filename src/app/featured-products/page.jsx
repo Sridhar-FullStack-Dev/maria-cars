@@ -22,7 +22,6 @@ export default function FeaturedProducts() {
 
   const [isLatestFirst, setIsLatestFirst] = useState(false);
   const [isLatestSecond, setIsLatestSecond] = useState(null);
-  const [isLatestThird, setIsLatestThird] = useState(false);
 
   return (
     <main>

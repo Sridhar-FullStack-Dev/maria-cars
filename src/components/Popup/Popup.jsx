@@ -18,7 +18,7 @@ export default function Popup() {
               <div>
                 <Image
                   src={
-                    "https://images.pexels.com/photos/10309762/pexels-photo-10309762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    "https://images.pexels.com/photos/2127041/pexels-photo-2127041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   }
                   alt=""
                   width={4912}
@@ -37,6 +37,7 @@ export default function Popup() {
                 <div className="mt-4 pb-8">
                   <Link
                     href={"https://forms.office.com/r/x2rmNmLSQ7"}
+                    target="_blank"
                     className="bg-[#DC2C2C] text-white flex justify-center items-center gap-2 p-4 rounded-sm text-sm"
                   >
                     <VscFeedback className="text-xl" /> Feedback
