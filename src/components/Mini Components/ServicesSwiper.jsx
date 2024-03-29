@@ -39,6 +39,9 @@ export default function ServicesSwiper() {
           1440: {
             slidesPerView: 3,
           },
+          2560: {
+            slidesPerView: 5,
+          },
         }}
         className="mySwiper rounded-xl"
       >
