@@ -8,6 +8,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Preloader from "@/components/Preloader";
 import Contacts from "@/components/Contacts";
+import Popup from "@/components/Popup/Popup";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,6 +26,7 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence>
 
+      <Popup />
       <Hero />
       <About />
       <Services />

@@ -134,15 +134,16 @@ export default function Contacts() {
       </div>
 
       {/* Google Map */}
-      <div className="w-full mt-16 opacity-[0.7]">
+      <div className="w-full mt-8 opacity-[0.7]">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.6946955011767!2d78.13878727421266!3d8.814725591238314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b03ef97c147cd25%3A0x2c96409bb5c32342!2sMaria%20car%20jewels!5e0!3m2!1sen!2sin!4v1711091433776!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.712185669549!2d78.13563097421265!3d8.813086391239905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b03ef7976b6b96b%3A0xb18cb08348eb3259!2sMaria%20Car%20Extra%20Fittings!5e0!3m2!1sen!2sin!4v1711708431074!5m2!1sen!2sin"
           width="600"
           height="450"
           style={{ border: 0 }}
           allowFullScreen={true}
           loading="lazy"
-          className="w-full h-64 rounded-3xl object-cover"
+          referrerpolicy="no-referrer-when-downgrade"
+          className="w-full h-80 rounded-3xl object-cover"
         ></iframe>
       </div>
 

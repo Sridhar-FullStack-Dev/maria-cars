@@ -8,6 +8,7 @@ import LatestProducts from "@/components/Mini Components/FeaturedProduct";
 
 // Icons
 import { GoArrowUpRight } from "react-icons/go";
+import Popup from "@/components/Popup/Popup";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function FeaturedProducts() {
 
   return (
     <main>
+      <Popup />
       <section className="hero-font overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
