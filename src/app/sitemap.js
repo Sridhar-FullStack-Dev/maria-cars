@@ -4,7 +4,7 @@ export default function sitemap() {
     {
       url: "https://maria-cars.com",
       lastModified: currentDate,
-      changeFrequency: "monthly",
+      changeFrequency: "daily",
       priority: 1,
     },
     {
