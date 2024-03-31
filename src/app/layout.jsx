@@ -13,21 +13,13 @@ const poppins = Poppins({
 export const metadata = {
   title: "Maria Cars | Home - Best Car Fitting Services In Thoothukudi",
   description:
-    "Maria Cars provides high-quality car fitting services. We are a reliable auto modification and fitting shop offering affordable plans and offers. Visit us for the best car fitting near you and our company is situated in Thoothukudi.",
+    "Best car fitting service in thoothukudi. Best car fitting services in tiruchendur. Best car fitting services near tiruchendur. Best car fitting services near tirunelveli",
   openGraph: {
     type: "website",
     url: "https://maria-cars.com",
     title: "Maria Cars | Home - Best Car Fitting Services In Thoothukudi",
     description:
-      "Maria Cars provides high-quality car fitting services. We are a reliable auto modification and fitting shop offering affordable plans and offers. Visit us for the best car fitting near you and our company is situated in Thoothukudi.",
-    images: [
-      {
-        url: "https://maria-cars.com/favicon.ico",
-        width: 800,
-        height: 600,
-        alt: "logo",
-      },
-    ],
+      "Best car fitting service in thoothukudi. Best car fitting services in tiruchendur. Best car fitting services near tiruchendur. Best car fitting services near tirunelveli",
     site_name: "Maria Cars - Best Car Fitting Services In Thoothukudi",
   },
 };
@@ -71,6 +63,13 @@ export default function RootLayout({ children }) {
             fbq('track', 'PageView');
           `}
         </Script>
+
+        {/* Favicon */}
+        <link
+          rel="shortcut icon"
+          href="https://maria-cars.com/favicon.ico"
+          type="image/x-icon"
+        />
       </head>
       <body className={`${poppins.className} antialiased`}>
         <Navbar />
