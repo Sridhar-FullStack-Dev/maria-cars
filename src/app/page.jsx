@@ -9,6 +9,8 @@ import Services from "@/components/Services";
 import Preloader from "@/components/Preloader";
 import Contacts from "@/components/Contacts";
 import Popup from "@/components/Popup/Popup";
+import FeaturedProducts from "@/components/FeaturedProducts";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,6 +32,8 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <FeaturedProducts />
+      <Testimonials />
       <Contacts />
     </main>
   );

@@ -23,7 +23,7 @@ export default function Contacts() {
   return (
     <section
       id="contacts"
-      className="contacts-font px-8 pt-10 overflow-hidden bg-white text-[#DC2C2C]"
+      className="contacts-font px-8 pt-10 overflow-hidden bg-white text-main"
     >
       <div className="flex sm:flex-col md:flex-row sm:justify-center justify-between items-center sm:gap-8 md:gap-0">
         <div className="md:w-1/3 flex justify-start items-center">

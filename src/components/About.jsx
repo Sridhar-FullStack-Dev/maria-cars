@@ -5,52 +5,52 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export default function About() {
-  const aboutHeadingRef = useRef(null);
-  const aboutHeadingRef2 = useRef(null);
-  const aboutParallaxRef = useRef(null);
+  // const aboutHeadingRef = useRef(null);
+  // const aboutHeadingRef2 = useRef(null);
+  // const aboutParallaxRef = useRef(null);
 
-  useEffect(() => {
-    const textElement = aboutHeadingRef.current;
+  // useEffect(() => {
+  //   const textElement = aboutHeadingRef.current;
 
-    const tl = gsap.timeline();
-    tl.to(textElement, { xPercent: -100, duration: 60, ease: "power1.inOut" });
-    tl.repeat(-1);
+  //   const tl = gsap.timeline();
+  //   tl.to(textElement, { xPercent: -100, duration: 60, ease: "power1.inOut" });
+  //   tl.repeat(-1);
 
-    return () => {
-      tl.kill();
-    };
-  }, []);
+  //   return () => {
+  //     tl.kill();
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    const textElement = aboutHeadingRef2.current;
+  // useEffect(() => {
+  //   const textElement = aboutHeadingRef2.current;
 
-    const tl = gsap.timeline();
-    tl.to(textElement, { xPercent: 100, duration: 100, ease: "power1.inOut" });
-    tl.repeat(-1);
+  //   const tl = gsap.timeline();
+  //   tl.to(textElement, { xPercent: 100, duration: 100, ease: "power1.inOut" });
+  //   tl.repeat(-1);
 
-    return () => {
-      tl.kill();
-    };
-  }, []);
+  //   return () => {
+  //     tl.kill();
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    gsap.to(aboutParallaxRef.current, {
-      y: -50,
-      scrollTrigger: {
-        trigger: aboutParallaxRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: 1,
-      },
-    });
-  }, []);
+  // useEffect(() => {
+  //   gsap.to(aboutParallaxRef.current, {
+  //     y: -50,
+  //     scrollTrigger: {
+  //       trigger: aboutParallaxRef.current,
+  //       start: "top bottom",
+  //       end: "bottom top",
+  //       scrub: 1,
+  //     },
+  //   });
+  // }, []);
 
   return (
     <section
       id="about"
       className="relative px-8 py-16 rounded-t-3xl overflow-hidden text-red-600"
     >
-      <div ref={aboutParallaxRef}>
+      {/* <div ref={aboutParallaxRef}>
         <div
           ref={aboutHeadingRef}
           className="footer-font uppercase flex items-center justify-center gap-8"
@@ -96,7 +96,7 @@ export default function About() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div className="hero-font w-full">
         <div className="flex justify-center items-center sm:text-xl md:text-3xl">
@@ -159,181 +159,181 @@ export default function About() {
   );
 }
 
-const aboutHeader = [
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-  {
-    heading: "about",
-    image: "asterisk",
-  },
-];
+// const aboutHeader = [
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+//   {
+//     heading: "about",
+//     image: "asterisk",
+//   },
+// ];

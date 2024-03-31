@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Poppins } from "next/font/google";
-import { usePathname } from "next/navigation";
 import { useLenis } from "@studio-freight/react-lenis";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -21,14 +20,12 @@ const poppins = Poppins({
 });
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [isClicked, setIsClicked] = useState(null);
   const [isHovered, setIsHovered] = useState(null);
   const [isNewsToggle, setIsNewsToggle] = useState(true);
   const [isMenuToggle, setIsMenuToggle] = useState(false);
   const [isHomeHovered, setIsHomeHovered] = useState(null);
   const [isFeaturedHovered, setIsFeaturedHovered] = useState(null);
-  const isActive = pathname === "/featured-products";
 
   // Lenis
   const lenis = useLenis();
@@ -43,7 +40,7 @@ export default function Navbar() {
               <BiSolidOffer className="sm:text-lg md:text-xl text-white" />
             </div>
 
-            <div className="text-[#DC2C2C] whitespace-nowrap">
+            <div className="text-main whitespace-nowrap">
               Exciting offers awaits only for you{" "}
               <Link href={"tel:+919443041599"} className="underline">
                 Contact Now.
@@ -127,27 +124,6 @@ export default function Navbar() {
                   )}
                 </Link>
               ))}
-
-              <Link
-                href={"/featured-products"}
-                onMouseEnter={() => setIsFeaturedHovered(true)}
-                onMouseLeave={() => setIsFeaturedHovered(null)}
-                className={`${
-                  isActive ? "text-red-600" : "text-black"
-                } hover:text-red-600 transition-all duration-200 ease-linear`}
-              >
-                Featured Products
-                {isFeaturedHovered && !isActive ? (
-                  <div className="px-1">
-                    <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
-                  </div>
-                ) : null}
-                {isActive ? (
-                  <div className="px-1">
-                    <div className="h-[2px] w-full bg-gradient-to-r from-red-400 to-red-300"></div>
-                  </div>
-                ) : null}
-              </Link>
             </div>
           </div>
 
@@ -173,7 +149,7 @@ export default function Navbar() {
 
           {/* Hamburger */}
           <div
-            className="text-[#DC2C2C] text-2xl lg:hidden"
+            className="text-main text-2xl lg:hidden"
             onClick={() => setIsMenuToggle(!isMenuToggle)}
           >
             <CiMenuFries />
@@ -189,7 +165,7 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ ease: "easeInOut", duration: 0.8 }}
-            className="hero-font fixed top-0 right-0 w-full h-screen text-[#DC2C2C] bg-white z-[999] lg:hidden"
+            className="hero-font fixed top-0 right-0 w-full h-screen text-main bg-white z-[999] lg:hidden"
           >
             <div className="p-6">
               <div className="flex justify-between items-center">
@@ -204,7 +180,7 @@ export default function Navbar() {
                 <div className="mt-8 whitespace-nowrap">
                   {/* Home */}
                   <div className="flex items-center justify-start gap-4">
-                    <div className="h-3 w-3 bg-[#DC2C2C]"></div>
+                    <div className="h-3 w-3 bg-main"></div>
                     <Link href={"/"} onClick={() => setIsMenuToggle(false)}>
                       Home
                     </Link>
@@ -216,7 +192,7 @@ export default function Navbar() {
                       key={mobileMenuKey}
                       className="flex items-center justify-start gap-4"
                     >
-                      <div className="h-3 w-3 bg-[#DC2C2C]"></div>
+                      <div className="h-3 w-3 bg-main"></div>
                       <Link
                         href={mobileMenu.href}
                         onClick={() => {
@@ -229,20 +205,9 @@ export default function Navbar() {
                     </div>
                   ))}
 
-                  {/* Featued Products */}
-                  <div className="flex items-center justify-start gap-4">
-                    <div className="h-3 w-3 bg-[#DC2C2C]"></div>
-                    <Link
-                      href={"/featured-products"}
-                      onClick={() => setIsMenuToggle(false)}
-                    >
-                      Featured Products
-                    </Link>
-                  </div>
-
                   {/* Feedback */}
                   <div className="flex items-center justify-start gap-4">
-                    <div className="h-3 w-3 bg-[#DC2C2C]"></div>
+                    <div className="h-3 w-3 bg-main"></div>
                     <Link
                       href={"https://forms.office.com/r/x2rmNmLSQ7"}
                       onClick={() => setIsMenuToggle(false)}
@@ -255,7 +220,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex justify-between items-center gap-4">
-              <div className="h-[1px] w-full bg-[#DC2C2C]"></div>
+              <div className="h-[1px] w-full bg-main"></div>
               <div>
                 <Image
                   src={"/assets/logo.png"}
@@ -265,7 +230,7 @@ export default function Navbar() {
                   className="w-48"
                 />
               </div>
-              <div className="h-[1px] w-full bg-[#DC2C2C]"></div>
+              <div className="h-[1px] w-full bg-main"></div>
             </div>
 
             <div className="mt-8 p-4">
@@ -304,6 +269,14 @@ const navMenu = [
   {
     href: "#services",
     name: "Services",
+  },
+  {
+    href: "#featured-products",
+    name: "Featured Products",
+  },
+  {
+    href: "#testimonials",
+    name: "Testimonials",
   },
   {
     href: "#contacts",

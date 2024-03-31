@@ -40,10 +40,13 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="hVkKiZkjc_fsboNJr30P7zyl9ol28yApUVsIw4epA-A"
         />
+        {/* Google Console */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-RXNTCD26MP"
         ></Script>
+
+        {/* Google Analytics */}
         <Script id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
@@ -51,6 +54,22 @@ export default function RootLayout({ children }) {
           gtag('js', new Date());
           gtag('config', 'G-RXNTCD26MP');
         `}
+        </Script>
+
+        {/* Facebook Pixel */}
+        <Script id="facebook-pixel" strategy="lazyOnload">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '954470865890501');
+            fbq('track', 'PageView');
+          `}
         </Script>
       </head>
       <body className={`${poppins.className} antialiased`}>
