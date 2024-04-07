@@ -85,7 +85,7 @@ export default function About() {
         {aboutLabels.map((labels, labelsKey) => (
           <div
             key={labelsKey}
-            className="md:w-1/5 h-56 border border-main rounded-sm p-4"
+            className="md:w-1/5 h-60 border border-main rounded-sm p-4"
           >
             <labels.icon className="text-5xl" />
             <h1 className="font-bold text-lg py-2">{labels.title}</h1>

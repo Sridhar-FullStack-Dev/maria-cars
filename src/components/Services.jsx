@@ -339,7 +339,7 @@ export default function Services() {
               alt=""
               height={1300}
               width={1300}
-              className="w-full h-64 object-cover sm:rounded-b-2xl md:rounded-br-2xl"
+              className="w-full h-64 object-cover sm:rounded-b-2xl md:rounded-b-none md:rounded-br-2xl"
             />
           </div>
         </div>
