@@ -182,7 +182,7 @@ export default function FeaturedProducts() {
                     that add a touch of glamour and style to your vehicle. Our
                     collection is designed to make your car look its absolute
                     best, with a range of beautiful options to choose from.
-                    Whether it's sleek accents or sparkling embellishments, each
+                    Whether it&apos;s sleek accents or sparkling embellishments, each
                     piece is crafted to enhance both the appearance and
                     functionality of your car.
                   </p>
