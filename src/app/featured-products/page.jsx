@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { motion } from "framer-motion";
 import { Poppins } from "next/font/google";
+import { useEffect, useState } from "react";
+import FTPreloader from "@/components/FTPreloader";
+import { motion, AnimatePresence } from "framer-motion";
 import LatestProducts from "@/components/Mini Components/FeaturedProduct";
 
 // Icons
@@ -23,15 +24,28 @@ export default function FeaturedProducts() {
   const [isLatestFirst, setIsLatestFirst] = useState(false);
   const [isLatestSecond, setIsLatestSecond] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 7000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main>
+      <AnimatePresence mode="wait">
+        {isLoading && <FTPreloader />}
+      </AnimatePresence>
+
       <Popup />
       <section className="hero-font overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeInOut", duration: 1 }}
-          className="bg-[#DC2C2C] text-white text-center py-4 sm:text-4xl md:text-7xl"
+          className="bg-main text-white text-center py-4 sm:text-4xl md:text-7xl"
         >
           <h1>Featured Product</h1>
         </motion.div>
@@ -41,7 +55,7 @@ export default function FeaturedProducts() {
           <motion.div
             animate={{ x: "-100%" }}
             transition={{ repeat: Infinity, duration: 40, ease: "easeOut" }}
-            className="flex items-center gap-4 sm:text-xl md:text-2xl text-[#DC2C2C] tracking-wider footer-font relative uppercase"
+            className="flex items-center gap-4 sm:text-xl md:text-2xl text-main tracking-wider footer-font relative uppercase"
           >
             {featuredMarquee.map((featuredMarquee1, featuredkey1) => (
               <div
@@ -91,7 +105,8 @@ export default function FeaturedProducts() {
           </motion.div>
         </div>
 
-        <div className="sm:px-8 md:px-0 py-8 footer-font">
+        {/* Top Sliders */}
+        <div className="sm:px-8 md:px-0 py-12 footer-font">
           <LatestProducts />
         </div>
 
@@ -102,7 +117,7 @@ export default function FeaturedProducts() {
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 1 }}
           >
-            <h1 className="text-center sm:text-4xl md:text-7xl text-[#DC2C2C]">
+            <h1 className="text-center sm:text-4xl md:text-7xl text-main">
               Products categories
             </h1>
           </motion.div>
@@ -111,7 +126,7 @@ export default function FeaturedProducts() {
             initial={{ opacity: 0, width: 0 }}
             whileInView={{ opacity: 1, width: "100%" }}
             transition={{ ease: "easeInOut", duration: 1 }}
-            className="h-1 bg-[#DC2C2C] mb-4 sm:mt-4 md:mt-8"
+            className="h-1 bg-main mb-4 sm:mt-4 md:mt-8"
           ></motion.div>
 
           <div className="p-8 footer-font">
@@ -119,13 +134,13 @@ export default function FeaturedProducts() {
               <motion.div
                 onMouseEnter={() => setIsHoveredFirst(true)}
                 onMouseLeave={() => setIsHoveredFirst(false)}
-                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                className={`p-4 bg-main overflow-hidden text-white sm:h-fit md:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
                   isHoveredFirst ? "md:w-[40rem]" : "md:w-72"
                 }`}
               >
                 <div className="flex justify-between items-center gap-4 whitespace-nowrap">
                   <h1 className="sm:text-[10px] md:text-base">
-                    Imported Horns
+                    Car Accessories
                   </h1>
 
                   <div
@@ -152,23 +167,24 @@ export default function FeaturedProducts() {
                   </div>
                 </div>
 
-                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4 mt-4">
                   <Image
-                    src={
-                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    }
+                    src={"/assets/ft-products/accessories-1.jpg"}
                     alt=""
                     height={1000}
                     width={1000}
-                    className="sm:w-40 md:w-72"
+                    className="sm:w-full md:w-72 sm:h-40 md:h-72 object-cover"
                   />
                   <p
                     className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
                   >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit dolor minima sapiente pariatur, officiis vitae
-                    voluptatem sunt sequi velit molestias iusto inventore, error
-                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                    Step into a world of stunning car accessories and jewelry
+                    that add a touch of glamour and style to your vehicle. Our
+                    collection is designed to make your car look its absolute
+                    best, with a range of beautiful options to choose from.
+                    Whether it's sleek accents or sparkling embellishments, each
+                    piece is crafted to enhance both the appearance and
+                    functionality of your car.
                   </p>
                 </div>
               </motion.div>
@@ -176,13 +192,13 @@ export default function FeaturedProducts() {
               <motion.div
                 onMouseEnter={() => setIsHoveredSecond(true)}
                 onMouseLeave={() => setIsHoveredSecond(false)}
-                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                className={`p-4 bg-main overflow-hidden text-white sm:h-fit md:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
                   isHoveredSecond ? "md:w-[40rem]" : "md:w-72"
                 }`}
               >
                 <div className="flex justify-between items-center gap-4 whitespace-nowrap">
                   <h1 className="sm:text-[10px] md:text-base">
-                    Imported Horns
+                    Fittings & More
                   </h1>
 
                   <div
@@ -209,23 +225,25 @@ export default function FeaturedProducts() {
                   </div>
                 </div>
 
-                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4 mt-5">
                   <Image
-                    src={
-                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    }
+                    src={"/assets/ft-products/hypersonic-1.jpg"}
                     alt=""
                     height={1000}
                     width={1000}
-                    className="sm:w-40 md:w-72"
+                    className="sm:w-full md:w-72 sm:h-40 md:h-72 object-cover"
                   />
                   <p
                     className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
                   >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit dolor minima sapiente pariatur, officiis vitae
-                    voluptatem sunt sequi velit molestias iusto inventore, error
-                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                    Explore our enticing range of fittings, featuring
+                    customizable RGB lights, premium woofers, luxurious seats,
+                    and more. Tailor your vehicle to your exact preferences with
+                    our customizable options, allowing you to create a truly
+                    personalized driving experience. From vibrant lighting
+                    options to immersive sound systems and indulgent seating
+                    arrangements, our collection promises to elevate every
+                    aspect of your journey.
                   </p>
                 </div>
               </motion.div>
@@ -233,13 +251,13 @@ export default function FeaturedProducts() {
               <motion.div
                 onMouseEnter={() => setIsHoveredThird(true)}
                 onMouseLeave={() => setIsHoveredThird(false)}
-                className={`p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
+                className={`p-4 bg-main overflow-hidden text-white sm:h-fit md:h-96 sm:w-72 transition-all ease-in-out duration-500 ${
                   isHoveredThird ? "md:w-[40rem]" : "md:w-72"
                 }`}
               >
                 <div className="flex justify-between items-center gap-4 whitespace-nowrap">
                   <h1 className="sm:text-[10px] md:text-base">
-                    Imported Horns
+                    Imported Products
                   </h1>
 
                   <div
@@ -266,23 +284,24 @@ export default function FeaturedProducts() {
                   </div>
                 </div>
 
-                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4 mt-4">
                   <Image
-                    src={
-                      "https://images.pexels.com/photos/6527701/pexels-photo-6527701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    }
+                    src={"/assets/ft-products/horn-germany.jpg"}
                     alt=""
                     height={1000}
                     width={1000}
-                    className="sm:w-40 md:w-72"
+                    className="sm:w-full md:w-72 sm:h-40 md:h-72 object-cover"
                   />
                   <p
                     className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
                   >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit dolor minima sapiente pariatur, officiis vitae
-                    voluptatem sunt sequi velit molestias iusto inventore, error
-                    consequatur vero quidem omnis quisquam recusandae aperiam?
+                    Indulge in our selection of imported treasures sourced from
+                    renowned destinations like Germany, Italy, and beyond.
+                    Experience the pinnacle of automotive excellence with our
+                    curated assortment of premium horns, seats, and more. From
+                    the precision engineering of German craftsmanship to the
+                    timeless elegance of Italian design, each product embodies
+                    the essence of quality and sophistication.
                   </p>
                 </div>
               </motion.div>
@@ -297,7 +316,7 @@ export default function FeaturedProducts() {
             whileInView={{ opacity: 1 }}
             transition={{ ease: "easeInOut", duration: 1 }}
           >
-            <h1 className="text-center sm:text-4xl md:text-7xl text-[#DC2C2C]">
+            <h1 className="text-center sm:text-4xl md:text-7xl text-main">
               Latest products
             </h1>
           </motion.div>
@@ -306,7 +325,7 @@ export default function FeaturedProducts() {
             initial={{ opacity: 0, width: 0 }}
             whileInView={{ opacity: 1, width: "100%" }}
             transition={{ ease: "easeInOut", duration: 1 }}
-            className="h-1 bg-[#DC2C2C] mb-4 sm:mt-4 md:mt-8"
+            className="h-1 bg-main mb-4 sm:mt-4 md:mt-8"
           ></motion.div>
 
           <div className="p-8 footer-font">
@@ -318,7 +337,7 @@ export default function FeaturedProducts() {
                   onMouseEnter={() => setIsLatestFirst(LatestProductKey1)}
                   onMouseLeave={() => setIsLatestFirst(null)}
                 >
-                  <div className="p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-72 sm:w-72 transition-all ease-in-out duration-500 md:w-72 hover:md:w-[40rem]">
+                  <div className="p-4 bg-main overflow-hidden text-white sm:h-fit md:h-80 sm:w-72 transition-all ease-in-out duration-500 md:w-72 hover:md:w-[40rem]">
                     <div className="flex justify-between items-center gap-4 whitespace-nowrap">
                       <h1 className="sm:text-[10px] md:text-base">
                         {LatestProduct1.productName}
@@ -350,13 +369,13 @@ export default function FeaturedProducts() {
                       </div>
                     </div>
 
-                    <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                    <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4 mt-4">
                       <Image
                         src={`/assets/ft-products/${LatestProduct1.src}`}
                         alt=""
                         height={1000}
                         width={1000}
-                        className="sm:w-40 md:w-72"
+                        className="sm:w-full md:w-72 sm:h-40 md:h-52 object-cover"
                       />
                       <p
                         className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
@@ -377,7 +396,7 @@ export default function FeaturedProducts() {
                   onMouseEnter={() => setIsLatestSecond(LatestProductKey2)}
                   onMouseLeave={() => setIsLatestSecond(null)}
                 >
-                  <div className="p-4 bg-[#DC2C2C] overflow-hidden text-white sm:h-72 sm:w-72 transition-all ease-in-out duration-500 md:w-72 hover:md:w-[40rem]">
+                  <div className="p-4 bg-main overflow-hidden text-white sm:h-fit md:h-80 sm:w-72 transition-all ease-in-out duration-500 md:w-72 hover:md:w-[40rem]">
                     <div className="flex justify-between items-center gap-4 whitespace-nowrap">
                       <h1 className="sm:text-[10px] md:text-base">
                         {LatestProduct2.productName}
@@ -409,13 +428,13 @@ export default function FeaturedProducts() {
                       </div>
                     </div>
 
-                    <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4">
+                    <div className="flex sm:flex-col md:flex-row sm:justify-center md:justify-start items-start gap-4 mt-4">
                       <Image
                         src={`/assets/ft-products/${LatestProduct2.src}`}
                         alt=""
                         height={1000}
                         width={1000}
-                        className="sm:w-40 md:w-72"
+                        className="sm:w-full md:w-72 sm:h-40 md:h-52 object-cover"
                       />
                       <p
                         className={`${poppins.className} text-sm text-justify sm:mt-4 md:mt-8 overflow-hidden`}
@@ -435,7 +454,7 @@ export default function FeaturedProducts() {
           For more{" "}
           <Link
             href={"tel:+919443041599"}
-            className="text-[#DC2C2C] flex items-center justify-center gap-4"
+            className="text-main flex items-center justify-center gap-4"
           >
             Contact us <GoArrowUpRight className="text-5xl" />
           </Link>
@@ -477,19 +496,19 @@ const latestProductsList1 = [
     productName: "Chrome Horn",
     src: "horn-chrome.jpg",
     productDetails:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+      "Chrome horns are a popular accessory for cars due to their stylish design and loud sound. They are designed to be highly enduring, with water and dust proof properties. Chrome horns are ultra-reliable and look and sound like nothing else on the road. They use the most modern acoustic technology, ensuring safety in the hustle and bustle of traffic.",
   },
   {
     productName: "Imported Horn - Germany",
     src: "horn-germany.jpg",
     productDetails:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+      "100% coper coil horn all cars. Royal Piston Mega Sonic Snail Horn This horn is known for its high durability and reliability, making it an ideal horn. It features a 100% copper coil and a high-quality diaphragm. The horn produces a blaring sound that can alert traffic to your vehicle. It's designed with an attractive look for visible mounting.",
   },
   {
     productName: "Hella Horn",
     src: "horn-hella.jpg",
     productDetails:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+      "Hella's horns, trumpet horns, and air trumpet horns are designed and manufactured with German precision technology. They comply with strict ECE and OEM requirements, both in applications for passenger cars and commercial vehicles.",
   },
 ];
 
@@ -498,18 +517,18 @@ const latestProductsList2 = [
     productName: "Rat Protection",
     src: "rat-protection.jpg",
     productDetails:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+      "Ultrasound Rat Repellents These devices emit high-frequency sound waves that are unpleasant to rats, deterring them from entering your car. They are eco-friendly, non-hazardous, and use minimal energy. They are also waterproof, making them suitable for use in various weather conditions",
   },
   {
     productName: "Cool Stuffs",
     src: "stuff-cool-1.jpg",
     productDetails:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+      "Dashboard Mounts: These holders are attached to the dashboard of the car. They offer a clear view of the phone without obstructing the windshield. Windshield Mounts: These holders are attached to the windshield using a suction cup.",
   },
   {
     productName: "LED Lasers",
     src: "laser-led.jpg",
     productDetails:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolor minima sapiente pariatur, officiis vitae voluptatem sunt sequi velit molestias iusto inventore, error consequatur vero quidem omnis quisquam recusandae aperiam?",
+      "LED laser Lights Stage Laser This device offers a Northern Light Effect with RGB Sound Activated Disco Strobe Lighting. It comes with a remote control and is suitable for indoor events like birthdays, Halloween parties, karaoke nights, let's start your dance by fitting this device.",
   },
 ];

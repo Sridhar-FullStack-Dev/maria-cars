@@ -6,7 +6,7 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, FreeMode, Pagination } from "swiper/modules";
+import { Autoplay, FreeMode } from "swiper/modules";
 import Image from "next/image";
 
 export default function FeaturedProduct() {
@@ -15,30 +15,17 @@ export default function FeaturedProduct() {
       <Swiper
         loop={true}
         freeMode={true}
-        modules={[Autoplay, FreeMode, Pagination]}
+        modules={[Autoplay, FreeMode]}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
         breakpoints={{
           200: {
             slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 10,
           },
           1024: {
             slidesPerView: 5,
-            spaceBetween: 10,
           },
         }}
         className="mySwiper rounded-xl"
@@ -89,5 +76,33 @@ const featuredProductsSwiper = [
   {
     name: "Imported Horns",
     image: "horn-germany.jpg",
+  },
+  {
+    name: "Car accessories",
+    image: "accessories.jpg",
+  },
+  {
+    name: "Blaupun Kt",
+    image: "blaupunkt.jpg",
+  },
+  {
+    name: "HeadLights",
+    image: "headlight.jpg",
+  },
+  {
+    name: "Ambience Light",
+    image: "hypersonic-1.jpg",
+  },
+  {
+    name: "NFS-7000 US",
+    image: "seatwoofers.jpg",
+  },
+  {
+    name: "K4 magic ultra lights",
+    image: "ultralights.jpg",
+  },
+  {
+    name: "Sony woofers",
+    image: "sony-1.jpg",
   },
 ];
