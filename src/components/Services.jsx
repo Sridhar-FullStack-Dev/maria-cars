@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import ServicesSwiper from "./Mini Components/ServicesSwiper";
@@ -8,12 +9,12 @@ export default function Services() {
   const ref2 = useRef(null);
   const ref3 = useRef(null);
   const ref4 = useRef(null);
-
   const observer1 = useRef(null);
   const observer2 = useRef(null);
   const observer3 = useRef(null);
   const observer4 = useRef(null);
 
+  // Counters
   useEffect(() => {
     observer1.current = new IntersectionObserver(
       (entries) => {
@@ -25,7 +26,7 @@ export default function Services() {
             gsap.to(count, {
               val: 25,
               duration: 2.5,
-              delay: 1,
+              delay: 0.5,
               roundProps: "val",
               onUpdate: () => {
                 element.textContent = `${count.val} +`;
@@ -45,7 +46,6 @@ export default function Services() {
       if (observer1.current) observer1.current.disconnect();
     };
   }, []);
-
   useEffect(() => {
     observer2.current = new IntersectionObserver(
       (entries) => {
@@ -57,7 +57,7 @@ export default function Services() {
             gsap.to(count, {
               val: 30,
               duration: 2.5,
-              delay: 1,
+              delay: 0.5,
               roundProps: "val",
               onUpdate: () => {
                 element.textContent = `${count.val} +`;
@@ -77,7 +77,6 @@ export default function Services() {
       if (observer2.current) observer2.current.disconnect();
     };
   }, []);
-
   useEffect(() => {
     observer3.current = new IntersectionObserver(
       (entries) => {
@@ -89,7 +88,7 @@ export default function Services() {
             gsap.to(count, {
               val: 25,
               duration: 2.5,
-              delay: 1,
+              delay: 0.5,
               roundProps: "val",
               onUpdate: () => {
                 element.textContent = `${count.val} +`;
@@ -109,7 +108,6 @@ export default function Services() {
       if (observer3.current) observer3.current.disconnect();
     };
   }, []);
-
   useEffect(() => {
     observer4.current = new IntersectionObserver(
       (entries) => {
@@ -121,7 +119,7 @@ export default function Services() {
             gsap.to(count, {
               val: 1000,
               duration: 2.5,
-              delay: 1,
+              delay: 0.5,
               roundProps: "val",
               onUpdate: () => {
                 element.textContent = `${count.val} +`;
@@ -157,7 +155,7 @@ export default function Services() {
             <motion.h1
               initial={{ opacity: 0, x: "-20px" }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
+              transition={{ ease: "easeInOut", duration: 1, delay: 0.5 }}
               className="hero-font sm:text-4xl lg:text-5xl"
             >
               Services.
@@ -228,6 +226,123 @@ export default function Services() {
         </div>
 
         <div></div>
+      </div>
+
+      {/* Services Description */}
+      <div className="mt-8 p-12 bg-white rounded-2xl">
+        <div className="flex justify-between gap-8">
+          <div className="w-1/2">
+            <Image
+              src={"/assets/services/service-1.jpg"}
+              alt="services"
+              height={1000}
+              width={1000}
+              priority
+              className="w-full h-64 object-cover rounded-tl-2xl"
+            />
+          </div>
+
+          <div className="w-1/2">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ ease: "easeIn", delay: 0.5 }}
+              className="flex justify-center items-center text-justify text-sm bg-main p-6 h-full rounded-tr-2xl"
+            >
+              We specialize in providing dedicated fitting services that elevate
+              your driving experience to new heights. Our team of skilled
+              professionals is committed to delivering top-notch craftsmanship
+              and attention to detail with every installation. Whether you're
+              looking to enhance the aesthetics of your vehicle or optimize its
+              functionality, we have the expertise and resources to make it
+              happen.
+            </motion.p>
+          </div>
+        </div>
+
+        <div className="flex justify-between gap-8 mt-8">
+          <div className="w-1/2">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ ease: "easeIn", delay: 0.5 }}
+              className="flex justify-center items-center text-justify text-sm bg-main p-6 h-full"
+            >
+              At our establishment, quality and customer satisfaction are our
+              top priorities. We understand that every vehicle is unique, and
+              our tailored approach ensures that each fitting is precisely
+              suited to your needs and preferences. From performance upgrades to
+              custom interior modifications, we offer a comprehensive range of
+              services to meet the diverse requirements of our clients.
+            </motion.p>
+          </div>
+
+          <div className="w-1/2">
+            <Image
+              src={"/assets/services/service-2.jpg"}
+              alt=""
+              height={1300}
+              width={1300}
+              className="w-full h-64 object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="flex justify-between gap-8 mt-8">
+          <div className="w-1/2">
+            <Image
+              src={"/assets/services/service-3.jpg"}
+              alt=""
+              height={1300}
+              width={1300}
+              className="w-full h-64 object-cover"
+            />
+          </div>
+          <div className="w-1/2">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ ease: "easeIn", delay: 0.5 }}
+              className="flex justify-center items-center text-justify text-sm bg-main p-6 h-full"
+            >
+              Our commitment to excellence extends beyond the installation
+              process. We source only the highest quality materials and
+              components, ensuring durability and reliability in every product
+              we offer. Additionally, our team stays up-to-date with the latest
+              industry advancements and techniques to provide cutting-edge
+              solutions that enhance both the performance and aesthetics of your
+              vehicle.
+            </motion.p>
+          </div>
+        </div>
+
+        <div className="flex justify-between gap-8 mt-8">
+          <div className="w-1/2">
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ ease: "easeIn", delay: 0.5 }}
+              className="flex justify-center items-center text-justify text-sm bg-main p-6 h-full rounded-bl-2xl"
+            >
+              We understand that every vehicle is unique, and we approach each
+              project with a bespoke mindset, ensuring that every aspect of our
+              work is tailored to meet your individual preferences and
+              requirements. With our dedication to craftsmanship and customer
+              satisfaction, you can trust us to deliver results that exceed your
+              expectations. Experience the difference of our premium fitting
+              services and elevate your driving experience today.
+            </motion.p>
+          </div>
+          <div className="w-1/2">
+            <Image
+              src={"/assets/services/service-4.jpg"}
+              alt=""
+              height={1300}
+              width={1300}
+              className="w-full h-64 object-cover rounded-br-2xl"
+            />
+          </div>
+        </div>
       </div>
     </motion.section>
   );

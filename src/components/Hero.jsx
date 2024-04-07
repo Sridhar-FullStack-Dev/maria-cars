@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section
+      id="home"
       className="bg-main px-4 py-16 rounded-b-3xl overflow-hidden hero-font"
     >
       <motion.div

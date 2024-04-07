@@ -10,6 +10,7 @@ import { useLenis } from "@studio-freight/react-lenis";
 
 // Icons
 import { IoCallOutline } from "react-icons/io5";
+import { PiArrowFatLinesUpFill } from "react-icons/pi";
 import { SiFacebook, SiYoutubeshorts, SiInstagram } from "react-icons/si";
 
 const poppins = Poppins({
@@ -162,6 +163,13 @@ export default function Footer() {
             Sridhar E.
           </Link>
         </div>
+
+        <Link
+          href={"#home"}
+          onClick={() => lenis.scrollTo("#home", { lerp: 0.02 })}
+        >
+          <PiArrowFatLinesUpFill className="text-xl" />
+        </Link>
 
         <div
           className={`${poppins.className} flex items-center justify-center`}

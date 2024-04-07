@@ -1,339 +1,131 @@
-"use client";
-import gsap from "gsap";
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useLenis } from "@studio-freight/react-lenis";
+
+// Icons
+import { GiCarWheel } from "react-icons/gi";
+import { TbTrendingUp } from "react-icons/tb";
+import { FaUserFriends } from "react-icons/fa";
+import { MdLocalCarWash } from "react-icons/md";
+import { GoArrowUpRight } from "react-icons/go";
+import { MdWorkspacePremium } from "react-icons/md";
 
 export default function About() {
-  // const aboutHeadingRef = useRef(null);
-  // const aboutHeadingRef2 = useRef(null);
-  // const aboutParallaxRef = useRef(null);
-
-  // useEffect(() => {
-  //   const textElement = aboutHeadingRef.current;
-
-  //   const tl = gsap.timeline();
-  //   tl.to(textElement, { xPercent: -100, duration: 60, ease: "power1.inOut" });
-  //   tl.repeat(-1);
-
-  //   return () => {
-  //     tl.kill();
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   const textElement = aboutHeadingRef2.current;
-
-  //   const tl = gsap.timeline();
-  //   tl.to(textElement, { xPercent: 100, duration: 100, ease: "power1.inOut" });
-  //   tl.repeat(-1);
-
-  //   return () => {
-  //     tl.kill();
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   gsap.to(aboutParallaxRef.current, {
-  //     y: -50,
-  //     scrollTrigger: {
-  //       trigger: aboutParallaxRef.current,
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       scrub: 1,
-  //     },
-  //   });
-  // }, []);
+  // Lenis
+  const lenis = useLenis();
 
   return (
-    <section
-      id="about"
-      className="relative px-8 py-16 rounded-t-3xl overflow-hidden text-red-600"
-    >
-      {/* <div ref={aboutParallaxRef}>
-        <div
-          ref={aboutHeadingRef}
-          className="footer-font uppercase flex items-center justify-center gap-8"
-        >
-          {aboutHeader.map((aboutHeaders, aboutHeadersKey) => (
-            <div
-              key={aboutHeadersKey}
-              className="flex justify-center items-center gap-4 text-2xl"
-            >
-              <Image
-                src={`/assets/about/${aboutHeaders.image}.png`}
-                alt=""
-                height={200}
-                width={200}
-                className="sm:h-5 md:h-7 sm:w-5 md:w-7"
-              />
-              <div className="sm:text-xl md:text-3xl">
-                {aboutHeaders.heading}&nbsp;
-              </div>
+    <section id="about" className="px-8 py-16 text-main">
+      {/* Heading */}
+      <motion.h1
+        initial={{ opacity: 0, x: "-20px" }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
+        className="hero-font sm:text-4xl lg:text-5xl contacts-font"
+      >
+        About Us.
+      </motion.h1>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 2 }}
+        className="mt-1 h-1 sm:w-72 lg:w-96 bg-main"
+      ></motion.div>
+
+      <div className="flex justify-between items-end gap-4">
+        <div className="w-[40%] flex flex-col justify-end">
+          <Link
+            href={"#contacts"}
+            onClick={() => lenis.scrollTo("#contacts", { lerp: 0.02 })}
+            className="flex items-center justify-center gap-2 p-2 border border-main bg-white w-fit text-sm transition-all duration-500 ease-in-out hover:bg-main hover:text-white hero-font whitespace-nowrap"
+          >
+            Talk to Us <GoArrowUpRight className="text-3xl" />
+          </Link>
+
+          <div className="mt-8">
+            <Image
+              src={"/assets/about/about-1.jpg"}
+              alt=""
+              height={1000}
+              width={1000}
+              priority
+              className="w-full h-[40vh] object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="w-[60%]">
+          <div className="flex justify-between items-center py-4">
+            <div className="w-1/2"></div>
+            <div className="w-1/2 text-xs">
+              At Maria cars & Extra Fitting, we pride ourselves on setting world
+              class standards in car fittings, offering a comprehensive range of
+              luxury customizations. Best car fitting service in thoothukudi.
+              Best car fitting services in tiruchendur. Best car fitting
+              services near tiruchendur. Best car fitting services near
+              tirunelveli
             </div>
-          ))}
-        </div>
-
-        <div
-          ref={aboutHeadingRef2}
-          className="footer-font uppercase flex items-center justify-center gap-8"
-        >
-          {aboutHeader.map((aboutHeaders2, aboutHeadersKey2) => (
-            <div
-              key={aboutHeadersKey2}
-              className="flex justify-center items-center gap-4 text-2xl "
-            >
-              <Image
-                src={`/assets/about/${aboutHeaders2.image}.png`}
-                alt=""
-                height={200}
-                width={200}
-                className="sm:h-5 md:h-7 sm:w-5 md:w-7"
-              />
-              <div className="sm:text-xl md:text-3xl">
-                {aboutHeaders2.heading}&nbsp;
-              </div>
-            </div>
-          ))}
-        </div>
-      </div> */}
-
-      <div className="hero-font w-full">
-        <div className="flex justify-center items-center sm:text-xl md:text-3xl">
-          <p className="text-center px-12">
-            Your Premier Car Fitting Company for Luxury Customizations!
-          </p>
-        </div>
-
-        <div className="footer-font font-light text-gray-400 sm:text-[10px] md:text-lg whitespace-nowrap text-center flex justify-center items-center sm:gap-4 md:gap-8 px-12 mt-4">
-          <p>Since June 6 2004</p>
-          <p>Thoothukudi | IND.</p>
-        </div>
-      </div>
-
-      <div className="px-12 flex sm:flex-col md:flex-row justify-center items-center gap-4">
-        <motion.div
-          initial={{ filter: "blur(10px)" }}
-          whileInView={{ filter: "blur(0px)" }}
-          transition={{ ease: "easeInOut", duration: 1, delay: 1 }}
-        >
-          <Image
-            src={"/assets/about/about-1.jpg"}
-            alt=""
-            height={6000}
-            width={4000}
-            className="w-[30rem]"
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ filter: "blur(10px)" }}
-          whileInView={{ filter: "blur(0px)" }}
-          transition={{ ease: "easeInOut", duration: 2, delay: 2 }}
-        >
+          </div>
           <Image
             src={"/assets/about/about-2.jpg"}
             alt=""
-            height={6000}
-            width={4000}
-            className="w-[30rem]"
+            height={1000}
+            width={1000}
+            priority
+            className="w-full h-[60vh] object-cover"
           />
-        </motion.div>
+        </div>
       </div>
 
-      <div className="sm:px-4 md:px-12 text-justify flex justify-center items-center mt-4">
-        <div className="flex sm:flex-col md:flex-row items-center justify-center gap-4 text-base">
-          At Maria cars & Extra Fitting, we pride ourselves on setting world
-          class standards in car fittings, offering a comprehensive range of
-          luxury customizations for discerning enthusiasts worldwide. From
-          imported horns to customizable RGB lights and opulent interior
-          enhancements, our expert team ensures that every detail of your
-          vehicle reflects unparalleled craftsmanship and sophistication. With a
-          dedication to excellence and a passion for automotive innovation, we
-          invite you to elevate your driving experience with our bespoke
-          solutions tailored to your unique preferences and aspirations.
-          <div className="font-bold text-lg">AWARD WINNERS. &nbsp;</div>
-        </div>
+      {/* Why Choose Us */}
+      <h1 className="text-lg mt-12">Why Choose Us</h1>
+      <div className="flex justify-between items-center gap-4 mt-4">
+        {aboutLabels.map((labels, labelsKey) => (
+          <div
+            key={labelsKey}
+            className="w-1/5 border border-main rounded-sm p-4"
+          >
+            <labels.icon className="text-5xl" />
+            <h1 className="font-bold text-lg py-2">{labels.title}</h1>
+            <p className="text-justify text-sm">{labels.description}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-// const aboutHeader = [
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-//   {
-//     heading: "about",
-//     image: "asterisk",
-//   },
-// ];
+const aboutLabels = [
+  {
+    icon: FaUserFriends,
+    title: "Customer Relations",
+    description:
+      "We prioritize maintaining positive and courteous relationships with our customers, ensuring that we always fulfill their desires without disappointment.",
+  },
+  {
+    icon: MdWorkspacePremium,
+    title: "Service Standards",
+    description:
+      "Our services consistently meet international standards, guaranteeing top-notch quality and satisfaction for our valued customers.",
+  },
+  {
+    icon: GiCarWheel,
+    title: "Best Fittings",
+    description:
+      "Our service excels in neatness and precision fitting, great attending to every detail to ensure your complete satisfaction in every aspect of our work.",
+  },
+  {
+    icon: TbTrendingUp,
+    title: "Trending Products",
+    description:
+      "We offer the most up-to-date, latest trending products at unbeatable prices, ensuring you access the best deals available in the current market.",
+  },
+  {
+    icon: MdLocalCarWash,
+    title: "Handle with care",
+    description:
+      "Our service is meticulously designed to handle your car with the utmost care, guaranteeing no damage while consistently delivering exceptional results.",
+  },
+];

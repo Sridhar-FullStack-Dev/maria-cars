@@ -11,13 +11,13 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Maria Cars | Home - Best Car Fitting Services In Thoothukudi",
+  title: "Maria Cars | Best Car Fitting Services In Thoothukudi",
   description:
     "Best car fitting service in thoothukudi. Best car fitting services in tiruchendur. Best car fitting services near tiruchendur. Best car fitting services near tirunelveli",
   openGraph: {
     type: "website",
     url: "https://maria-cars.com",
-    title: "Maria Cars | Home - Best Car Fitting Services In Thoothukudi",
+    title: "Maria Cars | Best Car Fitting Services In Thoothukudi",
     description:
       "Best car fitting service in thoothukudi. Best car fitting services in tiruchendur. Best car fitting services near tiruchendur. Best car fitting services near tirunelveli",
     site_name: "Maria Cars - Best Car Fitting Services In Thoothukudi",
