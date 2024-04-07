@@ -1,9 +1,10 @@
 import "./globals.scss";
-import SmoothScroll from "@/components/SmoothScroll";
-import Navbar from "@/components/Navbar";
-import { Poppins } from "next/font/google";
-import Footer from "@/components/Footer";
 import Script from "next/script";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Poppins } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <SmoothScroll>
           {children}
+          <Analytics />
           <Footer />
         </SmoothScroll>
       </body>
