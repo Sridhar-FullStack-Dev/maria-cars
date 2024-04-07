@@ -34,17 +34,17 @@ export default function About() {
         className="mt-1 h-1 sm:w-72 lg:w-96 bg-main"
       ></motion.div>
 
-      <div className="flex justify-between items-end gap-4">
-        <div className="w-[40%] flex flex-col justify-end">
+      <div className="flex sm:flex-col md:flex-row md:justify-between md:items-end gap-4">
+        <div className="md:w-[40%] flex flex-col justify-end">
           <Link
             href={"#contacts"}
             onClick={() => lenis.scrollTo("#contacts", { lerp: 0.02 })}
-            className="flex items-center justify-center gap-2 p-2 border border-main bg-white w-fit text-sm transition-all duration-500 ease-in-out hover:bg-main hover:text-white hero-font whitespace-nowrap"
+            className="sm:mt-8 md:mt-0 flex items-center justify-center gap-2 p-2 border border-main bg-white w-fit text-sm transition-all duration-500 ease-in-out hover:bg-main hover:text-white hero-font whitespace-nowrap"
           >
             Talk to Us <GoArrowUpRight className="text-3xl" />
           </Link>
 
-          <div className="mt-8">
+          <div className="sm:mt-4 md:mt-8">
             <Image
               src={"/assets/about/about-1.jpg"}
               alt=""
@@ -56,10 +56,10 @@ export default function About() {
           </div>
         </div>
 
-        <div className="w-[60%]">
+        <div className="md:w-[60%]">
           <div className="flex justify-between items-center py-4">
-            <div className="w-1/2"></div>
-            <div className="w-1/2 text-xs">
+            <div className="sm:hidden md:block md:w-1/2"></div>
+            <div className="md:w-1/2 text-xs">
               At Maria cars & Extra Fitting, we pride ourselves on setting world
               class standards in car fittings, offering a comprehensive range of
               luxury customizations. Best car fitting service in thoothukudi.
@@ -81,11 +81,11 @@ export default function About() {
 
       {/* Why Choose Us */}
       <h1 className="text-lg mt-12">Why Choose Us</h1>
-      <div className="flex justify-between items-center gap-4 mt-4">
+      <div className="flex sm:flex-col md:flex-row justify-between items-center gap-4 mt-4">
         {aboutLabels.map((labels, labelsKey) => (
           <div
             key={labelsKey}
-            className="w-1/5 border border-main rounded-sm p-4"
+            className="md:w-1/5 h-56 border border-main rounded-sm p-4"
           >
             <labels.icon className="text-5xl" />
             <h1 className="font-bold text-lg py-2">{labels.title}</h1>

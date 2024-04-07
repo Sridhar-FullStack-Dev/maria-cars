@@ -230,24 +230,24 @@ export default function Services() {
 
       {/* Services Description */}
       <div className="mt-8 p-12 bg-white rounded-2xl">
-        <div className="flex justify-between gap-8">
-          <div className="w-1/2">
+        <div className="flex sm:flex-col md:flex-row justify-between gap-8">
+          <div className="md:w-1/2">
             <Image
               src={"/assets/services/service-1.jpg"}
               alt="services"
               height={1000}
               width={1000}
               priority
-              className="w-full h-64 object-cover rounded-tl-2xl"
+              className="w-full h-64 object-cover sm:rounded-t-2xl md:rounded-t-none md:rounded-tl-2xl"
             />
           </div>
 
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ ease: "easeIn", delay: 0.5 }}
-              className="flex justify-center items-center text-justify text-sm bg-main p-6 h-full rounded-tr-2xl"
+              className="flex justify-center items-center text-justify text-sm bg-main p-6 h-full md:rounded-tr-2xl"
             >
               We specialize in providing dedicated fitting services that elevate
               your driving experience to new heights. Our team of skilled
@@ -260,8 +260,8 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="flex justify-between gap-8 mt-8">
-          <div className="w-1/2">
+        <div className="flex sm:flex-col md:flex-row justify-between gap-8 mt-8">
+          <div className="md:w-1/2">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -277,7 +277,7 @@ export default function Services() {
             </motion.p>
           </div>
 
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <Image
               src={"/assets/services/service-2.jpg"}
               alt=""
@@ -288,8 +288,8 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="flex justify-between gap-8 mt-8">
-          <div className="w-1/2">
+        <div className="flex sm:flex-col md:flex-row justify-between gap-8 mt-8">
+          <div className="md:w-1/2">
             <Image
               src={"/assets/services/service-3.jpg"}
               alt=""
@@ -298,7 +298,7 @@ export default function Services() {
               className="w-full h-64 object-cover"
             />
           </div>
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -316,13 +316,13 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="flex justify-between gap-8 mt-8">
-          <div className="w-1/2">
+        <div className="flex sm:flex-col md:flex-row justify-between gap-8 mt-8">
+          <div className="md:w-1/2">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ ease: "easeIn", delay: 0.5 }}
-              className="flex justify-center items-center text-justify text-sm bg-main p-6 h-full rounded-bl-2xl"
+              className="flex justify-center items-center text-justify text-sm bg-main p-6 h-full md:rounded-bl-2xl"
             >
               We understand that every vehicle is unique, and we approach each
               project with a bespoke mindset, ensuring that every aspect of our
@@ -333,13 +333,13 @@ export default function Services() {
               services and elevate your driving experience today.
             </motion.p>
           </div>
-          <div className="w-1/2">
+          <div className="md:w-1/2">
             <Image
               src={"/assets/services/service-4.jpg"}
               alt=""
               height={1300}
               width={1300}
-              className="w-full h-64 object-cover rounded-br-2xl"
+              className="w-full h-64 object-cover sm:rounded-b-2xl md:rounded-br-2xl"
             />
           </div>
         </div>
