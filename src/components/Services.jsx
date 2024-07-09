@@ -229,7 +229,7 @@ export default function Services() {
       </div>
 
       {/* Services Description */}
-      <div className="mt-8 p-12 bg-white rounded-2xl">
+      <div className="mt-8 sm:p-4 md:p-12 bg-white rounded-2xl">
         <div className="flex sm:flex-col md:flex-row justify-between gap-8">
           <div className="md:w-1/2">
             <Image
