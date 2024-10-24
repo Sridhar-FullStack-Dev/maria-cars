@@ -15,14 +15,34 @@ const poppins = Poppins({
 export const metadata = {
   title: "Maria Cars | Best Car Fitting Services In Thoothukudi",
   description:
-    "Best car fitting service in thoothukudi. Best car fitting services in tiruchendur. Best car fitting services near tiruchendur. Best car fitting services near tirunelveli",
+    "Premium car fitting, accessories, and modification services in Thoothukudi. Specializing in custom car solutions, audio systems, and professional installations. Serving Tiruchendur, Tirunelveli and surrounding areas.",
+  keywords:
+    "car fitting, car accessories, car modification, Thoothukudi, Tiruchendur, Tirunelveli, car audio systems, car customization",
+  robots: "index, follow",
   openGraph: {
     type: "website",
     url: "https://maria-cars.com",
-    title: "Maria Cars | Best Car Fitting Services In Thoothukudi",
+    title: "Maria Cars | Premium Car Fitting & Modification Services",
     description:
-      "Best car fitting service in thoothukudi. Best car fitting services in tiruchendur. Best car fitting services near tiruchendur. Best car fitting services near tirunelveli",
-    site_name: "Maria Cars - Best Car Fitting Services In Thoothukudi",
+      "Premium car fitting, accessories, and modification services in Thoothukudi. Expert installations and customizations.",
+    site_name: "Maria Cars",
+    images: [
+      {
+        url: "https://maria-cars.com/favicon.ico",
+        width: 1200,
+        height: 630,
+        alt: "Maria Cars Tuty",
+      },
+    ],
+    locale: "en_US",
+  },
+  social: {
+    instagram_handle: "@mariacars_tuty",
+    instagram_url:
+      "https://www.instagram.com/mariacars_tuty?igsh=MXRraDZjYmJteWV0ZA==",
+  },
+  alternates: {
+    canonical: "https://maria-cars.com",
   },
 };
 
