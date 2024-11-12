@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Poppins } from "next/font/google";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Icons

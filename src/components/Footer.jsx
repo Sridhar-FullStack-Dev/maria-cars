@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { Poppins } from "next/font/google";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 
 // Icons
 import { IoCallOutline } from "react-icons/io5";

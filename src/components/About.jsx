@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 
 // Icons
 import { GiCarWheel } from "react-icons/gi";
