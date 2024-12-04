@@ -17,47 +17,5 @@ export default function sitemap() {
     },
   ];
 
-  const servicePages = [
-    {
-      url: `${baseUrl}/services/car-accessories`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/car-audio`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/car-modification`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-  ];
-
-  const informationalPages = [
-    {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/gallery`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-  ];
-
-  return [...mainPages, ...servicePages, ...informationalPages];
+  return [...mainPages];
 }
