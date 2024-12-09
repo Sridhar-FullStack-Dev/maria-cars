@@ -6,6 +6,7 @@ import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import SmoothScroll from "@/components/SmoothScroll";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import SnowFlakes from "@/components/SnowFlakes/SnowFlakes";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -96,6 +97,7 @@ export default function RootLayout({ children }) {
       <body className={`${poppins.className} antialiased`}>
         <Navbar />
         <SmoothScroll>
+          <SnowFlakes />
           {children}
           <Footer />
         </SmoothScroll>
